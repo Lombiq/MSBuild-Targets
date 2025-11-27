@@ -12,7 +12,7 @@
     <PackageIcon>NuGetIcon.png</PackageIcon>
     <PackageTags>OrchardCore;Lombiq;AspNetCore;LibMan;LibraryManager</PackageTags>
     <RepositoryUrl>https://github.com/Lombiq/MSBuild-Targets</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/Lombiq.MSBuild.LibMan.Targets/Readme.md</PackageProjectUrl>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
 
