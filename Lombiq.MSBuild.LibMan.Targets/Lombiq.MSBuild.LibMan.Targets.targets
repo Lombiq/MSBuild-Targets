@@ -1,4 +1,5 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildThisFileDirectory)\..\Lombiq.MSBuild.Module.Targets\Lombiq.MSBuild.Module.Targets.targets" />
 
   <!--  Needed for deployment.  -->
   <Target Name="AddVendors" AfterTargets="LibraryManagerRestore">

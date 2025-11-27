@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Title>Lombiq MSBuild Targets - Orchard Core Module</Title>
+    <Authors>Lombiq Technologies</Authors>
+    <Copyright>Copyright © 2025, Lombiq Technologies Ltd.</Copyright>
+    <Description>Target for a Lombiq Orchard Core module.</Description>
+    <PackageIcon>NuGetIcon.png</PackageIcon>
+    <PackageTags>OrchardCore;Lombiq;AspNetCore;Module</PackageTags>
+    <RepositoryUrl>https://github.com/Lombiq/MSBuild-Targets</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/Lombiq.MSBuild.Module.Targets/Readme.md</PackageProjectUrl>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Readme.md" />
+    <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
+    <None Include="Lombiq.MSBuild.Module.Targets.props" Pack="true">
+      <PackagePath>build\Lombiq.MSBuild.Module.Targets.props</PackagePath>
+    </None>
+    <None Include="Lombiq.MSBuild.Module.Targets.targets" Pack="true">
+      <PackagePath>build\Lombiq.MSBuild.Module.Targets.targets</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

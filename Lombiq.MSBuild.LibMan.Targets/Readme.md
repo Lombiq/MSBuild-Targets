@@ -1,4 +1,4 @@
-# Lombiq MSBuild Targets - Library Manager
+# Lombiq MSBuild Targets - Library Manager for Orchard Core Modules
 
 ## About
 
