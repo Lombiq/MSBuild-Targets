@@ -19,6 +19,9 @@
   <ItemGroup>
     <None Include="Readme.md" />
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
+    <None Include="Lombiq.MSBuild.LibMan.Targets.props" Pack="true">
+      <PackagePath>build\Lombiq.MSBuild.LibMan.Targets.props</PackagePath>
+    </None>
     <None Include="Lombiq.MSBuild.LibMan.Targets.targets" Pack="true">
       <PackagePath>build\Lombiq.MSBuild.LibMan.Targets.targets</PackagePath>
     </None>
