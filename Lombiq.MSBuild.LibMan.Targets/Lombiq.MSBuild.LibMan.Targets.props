@@ -2,4 +2,8 @@
   <PropertyGroup>
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
   </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="libman.json" />
+  </ItemGroup>
 </Project>
