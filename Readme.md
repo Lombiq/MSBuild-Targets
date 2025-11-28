@@ -1,14 +1,17 @@
-# Lombiq <add project name here>
+# Lombiq MSBuild Targets
 
 ## About
 
-Add a general overview of the project here. Keep or remove the OSOCE note below as necessary.
+It contains MSBuild Target and Props files to streamline and DRY our projects. It has some Lombiq-specific default values, but any project can benefit from it that adopts our solution organization strucutre.
 
 Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
 
 ## Documentation
 
-Add detailed documentation here. If it's a lot of content then create documentation pages under the *Docs* folder and link pages here.
+To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this repository, check out their individual readmes:
+
+- [Module](Lombiq.MSBuild.Module.Targets/Readme.md): Target for a Lombiq Orchard Core module.
+- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Target for Microsoft Library Manager integration.
 
 ## Contributing and support
 
