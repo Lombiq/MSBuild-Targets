@@ -15,7 +15,7 @@ Do you want to quickly try out this project and see it in action? Check it out i
 To use it, either add the `Lombiq.MSBuild.LibMan.Targets` NuGet package to your project, or include an `<Import>` element with the relative path of the Targets file, if you want to use submodules instead. For example:
 
 ```xml
-<Import Project="../../../../tools/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.targets" />
+<Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.targets" />
 ```
 
 ### Usage
