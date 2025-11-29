@@ -10,9 +10,9 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType)'.Trim().ToUpperInvariant() == 'MODULE'" />
-    <PackageReference Include="OrchardCore.Theme.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType)'.Trim().ToUpperInvariant() == 'THEME'" />
-    <PackageReference Include="OrchardCore.Application.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType)'.TrimStart().ToUpperInvariant().StartsWith('APP')" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType.Trim().ToUpperInvariant())' == 'MODULE'" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType.Trim().ToUpperInvariant())' == 'THEME'" />
+    <PackageReference Include="OrchardCore.Application.Targets" Version="$(OrchardCoreVersion)" Condition="$(OrchardCoreProjectType.TrimStart().ToUpperInvariant().StartsWith('APP'))" />
     <PackageReference Include="OrchardCore.ResourceManagement" Version="$(OrchardCoreVersion)" />
     <PackageReference Include="OrchardCore.DisplayManagement" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
