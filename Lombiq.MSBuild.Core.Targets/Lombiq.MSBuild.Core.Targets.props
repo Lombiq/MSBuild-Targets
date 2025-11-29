@@ -1,0 +1,30 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Basic configuration -->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
+    <OrchardCoreVersion>2.1.0</OrchardCoreVersion>
+  </PropertyGroup>
+
+  <!-- NuGet package metadata -->
+
+  <PropertyGroup Condition="'$(NuGetBuild)' == 'true'">
+    <Authors>Lombiq Technologies</Authors>
+    <PackageIcon>NuGetIcon.png</PackageIcon>
+    <PackageTags>OrchardCore;Lombiq;AspNetCore</PackageTags>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+    <None Include="Readme.md" Condition="Exists('Readme.md')" />
+    <None Include="..\Readme.md" Link="Readme.md" Condition="!Exists('Readme.md') AND Exists('..\Readme.md')" />
+    <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <!-- Conditionally import Lombiq projects/packages -->
+
+  <Import Project="$(MSBuildThisFileDirectory)NuGetPackages.props" />
+
+</Project>

@@ -3,12 +3,13 @@
   <!-- Basic configuration -->
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
-    <OrchardCoreVersion>2.1.0</OrchardCoreVersion>
     <OrchardCoreProjectType Condition="'$(OrchardCoreProjectType)' == '' ">Module</OrchardCoreProjectType>
   </PropertyGroup>
+
+  <!-- Import core props -->
+
+  <Import Project="$(MSBuildThisFileDirectory)../Lombiq.MSBuild.Core.Targets/Lombiq.MSBuild.Core.Targets.props" />
 
   <!-- External packages -->
 
@@ -20,25 +21,6 @@
     <PackageReference Include="OrchardCore.ResourceManagement" Version="$(OrchardCoreVersion)" />
     <PackageReference Include="OrchardCore.DisplayManagement" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
-
-  <!-- NuGet package metadata -->
-
-  <PropertyGroup Condition="'$(NuGetBuild)' == 'true'">
-    <Authors>Lombiq Technologies</Authors>
-    <PackageIcon>NuGetIcon.png</PackageIcon>
-    <PackageTags>OrchardCore;Lombiq;AspNetCore</PackageTags>
-    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-  </PropertyGroup>
-
-  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
-    <None Include="Readme.md" Condition="Exists('Readme.md')" />
-    <None Include="..\Readme.md" Link="Readme.md" Condition="!Exists('Readme.md') AND Exists('..\Readme.md')" />
-    <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-
-  <!-- Conditionally import Lombiq projects/packages -->
-
-  <Import Project="$(MSBuildThisFileDirectory)NuGetPackages.props" />
 
   <!-- Ensure recipes are included -->
 

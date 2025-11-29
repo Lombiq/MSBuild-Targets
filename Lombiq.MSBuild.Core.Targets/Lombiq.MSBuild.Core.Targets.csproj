@@ -5,20 +5,23 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Title>Lombiq MSBuild Targets - Test - UI</Title>
+    <Title>Lombiq MSBuild Targets - Core</Title>
     <Authors>Lombiq Technologies</Authors>
     <Copyright>Copyright © 2025, Lombiq Technologies Ltd.</Copyright>
-    <Description>Target for a UI testing projects.</Description>
+    <Description>Target for a Lombiq style projects.</Description>
     <PackageIcon>NuGetIcon.png</PackageIcon>
-    <PackageTags>OrchardCore;Lombiq;AspNetCore;Test</PackageTags>
+    <PackageTags>OrchardCore;Lombiq;AspNetCore</PackageTags>
     <RepositoryUrl>https://github.com/Lombiq/MSBuild-Targets</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/Lombiq.MSBuild.Test.UI.Targets/Readme.md</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/Lombiq.MSBuild.Core.Targets/Readme.md</PackageProjectUrl>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Readme.md" />
+    <None Include="..\Readme.md" Link="Readme.md" />
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
+    <None Include="Lombiq.MSBuild.Core.Targets.props" Pack="true">
+      <PackagePath>build\Lombiq.MSBuild.Core.Targets.props</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
