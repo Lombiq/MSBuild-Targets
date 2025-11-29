@@ -1,7 +1,8 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <SolutionSrcDir Condition="'$(SolutionSrcDir)' == '' ">..\..\..</SolutionSrcDir>
+    <SolutionSrcDir Condition="'$(SolutionSrcDir)' == '' AND Exists('..\..\..\..\src')">..\..\..</SolutionSrcDir>
+    <SolutionSrcDir Condition="'$(SolutionSrcDir)' == '' AND Exists('..\..\..\src')">..\..</SolutionSrcDir>
   </PropertyGroup>
 
   <!-- ImportLombiqHelpfulLibrariesOrchardCore: Lombiq.HelpfulLibraries.OrchardCore -->
