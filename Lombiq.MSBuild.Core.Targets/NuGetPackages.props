@@ -6,6 +6,16 @@
     <LombiqHelpfulLibrariesPath Condition="!Exists($(LombiqHelpfulLibrariesPath))">$(SolutionSrcDir)\Libraries\Lombiq.HelpfulLibraries</LombiqHelpfulLibrariesPath>
   </PropertyGroup>
 
+  <!-- ImportLombiqHelpfulLibrariesCli: Lombiq.HelpfulLibraries.Cli -->
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesCli)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(LombiqHelpfulLibrariesPath)\Lombiq.HelpfulLibraries.Cli\Lombiq.HelpfulLibraries.Cli.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesCli)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.Cli" Version="12.5.0"/>
+  </ItemGroup>
+
   <!-- ImportLombiqHelpfulLibrariesOrchardCore: Lombiq.HelpfulLibraries.OrchardCore -->
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesOrchardCore)' == 'true' AND '$(NuGetBuild)' != 'true'">
