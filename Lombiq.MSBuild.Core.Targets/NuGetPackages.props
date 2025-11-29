@@ -105,4 +105,14 @@
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="14.2.0"/>
   </ItemGroup>
 
+  <!-- ImportLombiqPrivacyTestsUI: Lombiq.Privacy.Tests.UI -->
+
+  <ItemGroup Condition="'$(ImportLombiqPrivacyTestsUI)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Modules\Lombiq.Privacy\Lombiq.Privacy.Tests.UI\Lombiq.Privacy.Tests.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqPrivacyTestsUI)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Privacy.Tests.UI" Version="10.0.1-alpha.0.osoe-935" />
+  </ItemGroup>
+
 </Project>

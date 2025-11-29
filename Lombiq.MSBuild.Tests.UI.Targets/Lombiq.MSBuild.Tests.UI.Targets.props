@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' != 'true'">
-    <ProjectReference Include="..\..\Lombiq.Tests\Lombiq.Tests.csproj" />
+    <ProjectReference Include="$(SolutionTestDir)\Lombiq.Tests\Lombiq.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' == 'true'">
