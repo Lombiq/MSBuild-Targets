@@ -3,6 +3,7 @@
   <!-- Basic configuration -->
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <SolutionTestDir Condition="'$(SolutionTestDir)' == '' AND Exists('..\..\..\..\test')">..\..\..\..\test</SolutionTestDir>
     <SolutionTestDir Condition="'$(SolutionTestDir)' == '' AND Exists('..\..\..\test')">..\..\..\test</SolutionTestDir>
   </PropertyGroup>
@@ -24,12 +25,20 @@
 
   <!-- Lombiq packages -->
 
-  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+  <ItemGroup Condition="'$(ImportLombiqTests)' != 'true' AND '$(NuGetBuild)' != 'true'">
     <ProjectReference Include="$(SolutionTestDir)\Lombiq.UITestingToolbox\Lombiq.Tests.UI\Lombiq.Tests.UI.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+  <ItemGroup Condition="'$(ImportLombiqTests)' != 'true' AND '$(NuGetBuild)' == 'true'">
     <PackageReference Include="Lombiq.Tests.UI" Version="14.2.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="..\..\Lombiq.Tests\Lombiq.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Tests" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
