@@ -1,0 +1,82 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- ImportLombiqHelpfulLibrariesOrchardCore: Lombiq.HelpfulLibraries.OrchardCore -->
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesOrchardCore)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesOrchardCore)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.5.0"/>
+  </ItemGroup>
+
+  <!-- ImportLombiqHelpfulLibrariesLinqToDb: Lombiq.HelpfulLibraries.LinqToDb -->
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesLinqToDb)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.LinqToDb\Lombiq.HelpfulLibraries.LinqToDb.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesLinqToDb)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.LinqToDb" Version="12.5.0"/>
+  </ItemGroup>
+
+  <!-- ImportLombiqHelpfulLibrariesSourceGenerators: Lombiq.HelpfulLibraries.SourceGenerators -->
+
+  <PropertyGroup Condition="'$(ImportLombiqHelpfulLibrariesSourceGenerators)' == 'true' AND '$(NuGetBuild)' != 'true' AND Exists('$(SolutionDir)src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj')">
+    <SourceGeneratorLocation>$(SolutionDir)src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\bin\Debug\netstandard2.0\Lombiq.HelpfulLibraries.SourceGenerators.dll</SourceGeneratorLocation>
+    <SourceGeneratorLocation Condition=" '$(Configuration)' != 'Debug' ">
+      $(SolutionDir)src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\bin\Release\netstandard2.0\Lombiq.HelpfulLibraries.SourceGenerators.dll
+    </SourceGeneratorLocation>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesSourceGenerators)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Attributes\Lombiq.HelpfulLibraries.Attributes.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+    <ProjectReference Include="$(SolutionSrcDir)\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesSourceGenerators)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+  </ItemGroup>
+
+  <!-- ImportLombiqHelpfulExtensions: Lombiq.HelpfulExtensions -->
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulExtensions)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqHelpfulExtensions)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="11.1.0"/>
+  </ItemGroup>
+
+  <!-- ImportLombiqHostingBuildVersionDisplay: Lombiq.Hosting.BuildVersionDisplay -->
+
+  <ItemGroup Condition="'$(ImportLombiqHostingBuildVersionDisplay)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Modules\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay\Lombiq.Hosting.BuildVersionDisplay.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqHostingBuildVersionDisplay)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.1.nest-562"/>
+  </ItemGroup>
+
+  <!-- ImportLombiqVueJsResources: Lombiq.VueJs.Resources -->
+
+  <ItemGroup Condition="'$(ImportLombiqVueJsResources)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Modules\Lombiq.VueJs\Lombiq.VueJs.Resources\Lombiq.VueJs.Resources.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqVueJsResources)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.VueJs.Resources" Version="9.0.2-alpha.0.osoe-1185"/>
+  </ItemGroup>
+
+  <!-- ImportLombiqTestsUIAppExtensions: Lombiq.Tests.UI.AppExtensions -->
+
+  <ItemGroup Condition="'$(ImportLombiqTestsUIAppExtensions)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\..\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI.AppExtensions\Lombiq.Tests.UI.AppExtensions.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqTestsUIAppExtensions)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="14.2.0"/>
+  </ItemGroup>
+
+</Project>
