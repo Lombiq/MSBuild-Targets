@@ -5,14 +5,16 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
     <OrchardCoreVersion>2.1.0</OrchardCoreVersion>
-    <SolutionSrcDir Condition="'$(SolutionSrcDir)' == '' ">..\..\..</SolutionSrcDir>
+    <OrchardCoreProjectType Condition="'$(OrchardCoreProjectType)' == '' ">Module</OrchardCoreProjectType>
   </PropertyGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="OrchardCore.Module.Targets" Version="2.1.0" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="2.1.0" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.0" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType)'.Trim().ToUpperInvariant() == 'MODULE'" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType)'.Trim().ToUpperInvariant() == 'THEME'" />
+    <PackageReference Include="OrchardCore.Application.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType)'.TrimStart().ToUpperInvariant().StartsWith('APP')" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
   <!-- NuGet package metadata -->

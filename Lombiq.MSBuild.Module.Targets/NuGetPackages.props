@@ -1,5 +1,9 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+  <PropertyGroup>
+    <SolutionSrcDir Condition="'$(SolutionSrcDir)' == '' ">..\..\..</SolutionSrcDir>
+  </PropertyGroup>
+
   <!-- ImportLombiqHelpfulLibrariesOrchardCore: Lombiq.HelpfulLibraries.OrchardCore -->
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesOrchardCore)' == 'true' AND '$(NuGetBuild)' != 'true'">
