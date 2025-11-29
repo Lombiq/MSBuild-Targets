@@ -1,5 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+  <!-- Basic configuration -->
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
@@ -7,6 +9,8 @@
     <OrchardCoreVersion>2.1.0</OrchardCoreVersion>
     <OrchardCoreProjectType Condition="'$(OrchardCoreProjectType)' == '' ">Module</OrchardCoreProjectType>
   </PropertyGroup>
+
+  <!-- External packages -->
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -32,8 +36,16 @@
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
-  <!-- Conditionally import Lombiq projects/packages. -->
+  <!-- Conditionally import Lombiq projects/packages -->
 
   <Import Project="$(MSBuildThisFileDirectory)NuGetPackages.props" />
+
+  <!-- Ensure recipes are included -->
+
+  <ItemGroup>
+    <EmbeddedResource Update="Recipes\**.recipe.json" Condition="Exists('Recipes')">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 
 </Project>
