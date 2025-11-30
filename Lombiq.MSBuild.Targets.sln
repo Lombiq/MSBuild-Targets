@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.LibMan.Targets", "Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.csproj", "{2C0907EE-628D-42C6-BE8F-3329EB0F1434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Module.Targets", "Lombiq.MSBuild.Module.Targets\Lombiq.MSBuild.Module.Targets.csproj", "{22684BA2-3A59-4441-9FE2-DE49F5786ED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Core.Targets", "Lombiq.MSBuild.Core.Targets\Lombiq.MSBuild.Core.Targets.csproj", "{9B2E47CF-34E7-4D18-A710-E6068187488D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lombiq.MSBuild.Tests.UI.Targets", "Lombiq.MSBuild.Tests.UI.Targets\Lombiq.MSBuild.Tests.UI.Targets.csproj", "{26CCCD9E-A3AB-4E27-9E81-1FCEF0FD2D95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C0907EE-628D-42C6-BE8F-3329EB0F1434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0907EE-628D-42C6-BE8F-3329EB0F1434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0907EE-628D-42C6-BE8F-3329EB0F1434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0907EE-628D-42C6-BE8F-3329EB0F1434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22684BA2-3A59-4441-9FE2-DE49F5786ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22684BA2-3A59-4441-9FE2-DE49F5786ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22684BA2-3A59-4441-9FE2-DE49F5786ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22684BA2-3A59-4441-9FE2-DE49F5786ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2E47CF-34E7-4D18-A710-E6068187488D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2E47CF-34E7-4D18-A710-E6068187488D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2E47CF-34E7-4D18-A710-E6068187488D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2E47CF-34E7-4D18-A710-E6068187488D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26CCCD9E-A3AB-4E27-9E81-1FCEF0FD2D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26CCCD9E-A3AB-4E27-9E81-1FCEF0FD2D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26CCCD9E-A3AB-4E27-9E81-1FCEF0FD2D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26CCCD9E-A3AB-4E27-9E81-1FCEF0FD2D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
