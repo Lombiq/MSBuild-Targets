@@ -49,7 +49,10 @@ The following packages are supported:
 - `ImportLombiqHelpfulExtensions`: [Lombiq.HelpfulExtensions](https://www.nuget.org/packages/Lombiq.HelpfulExtensions/)
 - `ImportLombiqHostingBuildVersionDisplay`: [Lombiq.Hosting.BuildVersionDisplay](https://www.nuget.org/packages/Lombiq.Hosting.BuildVersionDisplay/)
 - `ImportLombiqVueJsResources`: [Lombiq.VueJs.Resources](https://www.nuget.org/packages/Lombiq.VueJs.Resources/)
+- `ImportLombiqTests`: [Lombiq.Tests.UI](https://www.nuget.org/packages/Lombiq.Tests/)
+- `ImportLombiqTestsUI`: [Lombiq.Tests.UI](https://www.nuget.org/packages/Lombiq.Tests.UI/)
 - `ImportLombiqTestsUIAppExtensions`: [Lombiq.Tests.UI.AppExtensions](https://www.nuget.org/packages/Lombiq.Tests.UI.AppExtensions/)
+- `ImportLombiqPrivacy`: [Lombiq.Privacy](https://www.nuget.org/packages/Lombiq.Privacy/)
 - `ImportLombiqPrivacyTestsUI`: [Lombiq.Privacy.Tests.UI](https://www.nuget.org/packages/Lombiq.Privacy.Tests.UI/)
 
 Depending on your project structure, you may have to set the `<SolutionSrcDir>` or `<LombiqHelpfulLibrariesPath>` properties to correctly import these as `<ProjectReference>`. The default value for `<LombiqHelpfulLibrariesPath>` is _$(SolutionSrcDir)\Libraries\Lombiq.HelpfulLibraries_.

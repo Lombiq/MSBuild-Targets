@@ -2,7 +2,7 @@
 
 ## About
 
-Target for a Lombiq Orchard Core module.
+Target for a UI testing projects.
 
 For general details about and usage instructions see the [root Readme](../Readme.md).
 
@@ -12,11 +12,15 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ### Setup
 
-To use it, either add the `Lombiq.MSBuild.Module.Targets` NuGet package to your project, or include an `<Import>` element with the relative path of the Targets file, if you want to use submodules instead. For example:
+To use it, either add the `Lombiq.MSBuild.Tests.UI.Targets` NuGet package to your project, or include an `<Import>` element with the relative path of the Props file, if you want to use submodules instead. For example:
 
 ```xml
-<Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.targets" />
+<Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Tests.UI.Targets/Lombiq.MSBuild.Tests.UI.Targets.targets" />
 ```
+
+### Configuration
+
+Besides the properties inherited from the [core configuration](../Readme.md#configuration), this target automatically imports `Lombiq.Tests.UI`, unless you have the `<ImportLombiqTests>true</ImportLombiqTests>` property. (This makes sense, because `Lombiq.Tests.UI` already implicitly imports `Lombiq.Tests`, so the only reason to explicitly import it is if you don't need the UI testing library.) This way, you can use this target for both unit testing and UI testing with less overhead.
 
 ## Contributing and support
 
