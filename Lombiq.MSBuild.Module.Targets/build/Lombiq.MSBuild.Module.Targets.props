@@ -3,5 +3,5 @@
     <NuGetBuild>true</NuGetBuild>
   </PropertyGroup>
 
-  <Import Project="$(MSBuildThisFileDirectory)/../$(MSBuildThisFileName)"/>
+  <Import Project="$(MSBuildThisFileDirectory)/../$(MSBuildThisFileName).props"/>
 </Project>
