@@ -6,6 +6,7 @@
     <OutputType>Exe</OutputType>
     <SolutionTestDir Condition="'$(SolutionTestDir)' == '' AND Exists('..\..\..\..\test')">..\..\..\..\test</SolutionTestDir>
     <SolutionTestDir Condition="'$(SolutionTestDir)' == '' AND Exists('..\..\..\test')">..\..\..\test</SolutionTestDir>
+    <ImportLombiqTestsUI Condition="'$(ImportLombiqTestsUI)' == '' AND '$(ImportLombiqTests)' != 'true'">true</ImportLombiqTestsUI>
   </PropertyGroup>
 
   <!-- Import core props -->
@@ -21,24 +22,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <!-- Lombiq packages -->
-
-  <ItemGroup Condition="'$(ImportLombiqTests)' != 'true' AND '$(NuGetBuild)' != 'true'">
-    <ProjectReference Include="$(SolutionTestDir)\Lombiq.UITestingToolbox\Lombiq.Tests.UI\Lombiq.Tests.UI.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(ImportLombiqTests)' != 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.Tests.UI" Version="14.2.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' != 'true'">
-    <ProjectReference Include="$(SolutionTestDir)\Lombiq.Tests\Lombiq.Tests.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.Tests" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

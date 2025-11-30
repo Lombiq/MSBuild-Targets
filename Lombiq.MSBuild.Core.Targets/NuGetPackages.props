@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesCli)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.Cli" Version="12.5.0"/>
+    <PackageReference Include="Lombiq.HelpfulLibraries.Cli" Version="12.5.1-alpha.0.nest-643"/>
   </ItemGroup>
 
   <!-- ImportLombiqHelpfulLibrariesOrchardCore: Lombiq.HelpfulLibraries.OrchardCore -->
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesOrchardCore)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.5.0"/>
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.5.1-alpha.0.nest-643"/>
   </ItemGroup>
 
   <!-- ImportLombiqHelpfulLibrariesLinqToDb: Lombiq.HelpfulLibraries.LinqToDb -->
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesLinqToDb)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.LinqToDb" Version="12.5.0"/>
+    <PackageReference Include="Lombiq.HelpfulLibraries.LinqToDb" Version="12.5.1-alpha.0.nest-643"/>
   </ItemGroup>
 
   <!-- ImportLombiqHelpfulLibrariesRefit: Lombiq.HelpfulLibraries.Refit -->
@@ -43,14 +43,14 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesRefit)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.Refit" Version="12.5.0" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.Refit" Version="12.5.1-alpha.0.nest-643" />
   </ItemGroup>
 
   <!-- ImportLombiqHelpfulLibrariesSourceGenerators: Lombiq.HelpfulLibraries.SourceGenerators -->
 
   <PropertyGroup Condition="'$(ImportLombiqHelpfulLibrariesSourceGenerators)' == 'true' AND '$(NuGetBuild)' != 'true' AND Exists('$(SolutionDir)src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj')">
     <SourceGeneratorLocation>$(SolutionDir)src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\bin\Debug\netstandard2.0\Lombiq.HelpfulLibraries.SourceGenerators.dll</SourceGeneratorLocation>
-    <SourceGeneratorLocation Condition=" '$(Configuration)' != 'Debug' ">
+    <SourceGeneratorLocation Condition="'$(Configuration)' != 'Debug'">
       $(SolutionDir)src\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\bin\Release\netstandard2.0\Lombiq.HelpfulLibraries.SourceGenerators.dll
     </SourceGeneratorLocation>
   </PropertyGroup>
@@ -61,8 +61,8 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulLibrariesSourceGenerators)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
-    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.5.1-alpha.0.nest-643" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.5.1-alpha.0.nest-643" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
   </ItemGroup>
 
   <!-- ImportLombiqHelpfulExtensions: Lombiq.HelpfulExtensions -->
@@ -72,7 +72,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqHelpfulExtensions)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulExtensions" Version="11.1.0"/>
+    <PackageReference Include="Lombiq.HelpfulExtensions" Version="11.1.1-alpha.0.nest-643"/>
   </ItemGroup>
 
   <!-- ImportLombiqHostingBuildVersionDisplay: Lombiq.Hosting.BuildVersionDisplay -->
@@ -82,7 +82,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqHostingBuildVersionDisplay)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.1.nest-562"/>
+    <PackageReference Include="Lombiq.Hosting.BuildVersionDisplay" Version="7.0.1-alpha.2.nest-643"/>
   </ItemGroup>
 
   <!-- ImportLombiqVueJsResources: Lombiq.VueJs.Resources -->
@@ -92,7 +92,27 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqVueJsResources)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.VueJs.Resources" Version="9.0.2-alpha.0.osoe-1185"/>
+    <PackageReference Include="Lombiq.VueJs.Resources" Version="9.0.2-alpha.1.nest-643"/>
+  </ItemGroup>
+
+  <!-- ImportLombiqTests: Lombiq.Tests -->
+
+  <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionTestDir)\Lombiq.Tests\Lombiq.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqTests)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Tests" Version="5.0.0" />
+  </ItemGroup>
+
+  <!-- ImportLombiqTestsUI: Lombiq.Tests.UI -->
+
+  <ItemGroup Condition="'$(ImportLombiqTestsUI)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionTestDir)\Lombiq.UITestingToolbox\Lombiq.Tests.UI\Lombiq.Tests.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqTestsUI)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Tests.UI" Version="14.2.1-alpha.0.nest-643" />
   </ItemGroup>
 
   <!-- ImportLombiqTestsUIAppExtensions: Lombiq.Tests.UI.AppExtensions -->
@@ -102,7 +122,17 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(ImportLombiqTestsUIAppExtensions)' == 'true' AND '$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="14.2.0"/>
+    <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="14.2.1-alpha.0.nest-643" />
+  </ItemGroup>
+
+  <!-- ImportLombiqPrivacy: Lombiq.Privacy -->
+
+  <ItemGroup Condition="'$(ImportLombiqPrivacy)' == 'true' AND '$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(SolutionSrcDir)\Modules\Lombiq.Privacy\Lombiq.Privacy\Lombiq.Privacy.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ImportLombiqPrivacy)' == 'true' AND '$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Privacy" Version="10.0.1-alpha.5.osoe-1069.nest-643" />
   </ItemGroup>
 
   <!-- ImportLombiqPrivacyTestsUI: Lombiq.Privacy.Tests.UI -->
