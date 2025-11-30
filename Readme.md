@@ -10,8 +10,50 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this repository, check out their individual readmes:
 
-- [Module](Lombiq.MSBuild.Module.Targets/Readme.md): Target for a Lombiq Orchard Core module.
-- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Target for Microsoft Library Manager integration.
+- Core: Target for Lombiq-style projects. All other targets import this under the hood.
+- [Module](Lombiq.MSBuild.Module.Targets/Readme.md): Target for a Lombiq Orchard Core module, theme or application.
+- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Target for Microsoft Library Manager integration. Implicitly references `Lombiq.MSBuild.Module.Targets`.
+- [Tests.UI](Lombiq.MSBuild.Tests.UI.Targets/Readme.md): Target for a UI testing projects.
+
+## Configuration
+
+There are some properties you can set before importing either of the Props files.
+
+When you set the `<Import{full package name without dots}>` property to true, it imports the project either using `<ProjectReference>` or `<PackageReference>` depending on your current configuration. It also provides centralized version management for the package references. For example:
+
+```xml
+  <PropertyGroup>
+    <ImportLombiqHelpfulLibrariesOrchardCore>true</ImportLombiqHelpfulLibrariesOrchardCore>
+  </PropertyGroup>
+```
+
+does the same as
+
+```xml
+  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(LombiqHelpfulLibrariesPath)\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.5.0"/>
+  </ItemGroup>
+```
+
+The following packages are supported:
+- `ImportLombiqHelpfulLibrariesCli`: [Lombiq.HelpfulLibraries.Cli](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.Cli/)
+- `ImportLombiqHelpfulLibrariesOrchardCore`: [Lombiq.HelpfulLibraries.OrchardCore](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.OrchardCore/)
+- `ImportLombiqHelpfulLibrariesLinqToDb`: [Lombiq.HelpfulLibraries.LinqToDb](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.LinqToDb/)
+- `ImportLombiqHelpfulLibrariesRefit`: [Lombiq.HelpfulLibraries.Refit](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.Refit/)
+- `ImportLombiqHelpfulLibrariesSourceGenerators`: [Lombiq.HelpfulLibraries.SourceGenerators](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.SourceGenerators/)
+- `ImportLombiqHelpfulExtensions`: [Lombiq.HelpfulExtensions](https://www.nuget.org/packages/Lombiq.HelpfulExtensions/)
+- `ImportLombiqHostingBuildVersionDisplay`: [Lombiq.Hosting.BuildVersionDisplay](https://www.nuget.org/packages/Lombiq.Hosting.BuildVersionDisplay/)
+- `ImportLombiqVueJsResources`: [Lombiq.VueJs.Resources](https://www.nuget.org/packages/Lombiq.VueJs.Resources/)
+- `ImportLombiqTestsUIAppExtensions`: [Lombiq.Tests.UI.AppExtensions](https://www.nuget.org/packages/Lombiq.Tests.UI.AppExtensions/)
+- `ImportLombiqPrivacyTestsUI`: [Lombiq.Privacy.Tests.UI](https://www.nuget.org/packages/Lombiq.Privacy.Tests.UI/)
+
+Depending on your project structure, you may have to set the `<SolutionSrcDir>` or `<LombiqHelpfulLibrariesPath>` properties to correctly import these as `<ProjectReference>`. The default value for `<LombiqHelpfulLibrariesPath>` is _$(SolutionSrcDir)\Libraries\Lombiq.HelpfulLibraries_.
+
+If you want to set the `NuGetBuild` property, this should be done before importing the props file as well. It's best practice to do this in the _Directory.Build.props_ instead.
 
 ## Contributing and support
 

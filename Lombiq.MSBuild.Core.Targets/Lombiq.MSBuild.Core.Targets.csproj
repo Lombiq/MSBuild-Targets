@@ -8,7 +8,7 @@
     <Title>Lombiq MSBuild Targets - Core</Title>
     <Authors>Lombiq Technologies</Authors>
     <Copyright>Copyright © 2025, Lombiq Technologies Ltd.</Copyright>
-    <Description>Target for a Lombiq style projects.</Description>
+    <Description>Target for Lombiq-style projects.</Description>
     <PackageIcon>NuGetIcon.png</PackageIcon>
     <PackageTags>OrchardCore;Lombiq;AspNetCore</PackageTags>
     <RepositoryUrl>https://github.com/Lombiq/MSBuild-Targets</RepositoryUrl>
@@ -19,9 +19,9 @@
   <ItemGroup>
     <None Include="..\Readme.md" Link="Readme.md" />
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
-    <None Include="Lombiq.MSBuild.Core.Targets.props" Pack="true">
-      <PackagePath>build\Lombiq.MSBuild.Core.Targets.props</PackagePath>
-    </None>
+    <None Include="build\**" Pack="true" PackagePath="build\" />
+    <None Include="*.props" Pack="true" PackagePath="" />
+    <None Include="*.targets" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

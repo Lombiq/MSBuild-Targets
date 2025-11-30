@@ -10,10 +10,13 @@
 
   <!-- NuGet package metadata -->
 
-  <PropertyGroup Condition="'$(NuGetBuild)' == 'true'">
-    <Authors>Lombiq Technologies</Authors>
-    <PackageIcon>NuGetIcon.png</PackageIcon>
-    <PackageTags>OrchardCore;Lombiq;AspNetCore</PackageTags>
+  <PropertyGroup>
+    <Authors Condition="'$(Authors)' == ''">Lombiq Technologies</Authors>
+    <PackageIcon Condition="'$(PackageIcon)' == ''">NuGetIcon.png</PackageIcon>
+    <PackageTags Condition="'$(PackageTags)' == ''">OrchardCore;Lombiq;AspNetCore</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(PackageLicenseExpression)' == ''">
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
 
