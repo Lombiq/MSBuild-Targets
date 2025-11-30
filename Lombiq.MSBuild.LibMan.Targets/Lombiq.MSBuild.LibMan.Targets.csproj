@@ -22,6 +22,10 @@
     <None Include="build\**" Pack="true" PackagePath="build\" />
     <None Include="*.props" Pack="true" PackagePath="" />
     <None Include="*.targets" Pack="true" PackagePath="" />
+    <None Update="build\Lombiq.MSBuild.LibMan.Targets.targets">
+      <Pack>true</Pack>
+      <PackagePath>build/</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
