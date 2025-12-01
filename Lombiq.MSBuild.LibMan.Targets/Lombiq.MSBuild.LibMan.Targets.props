@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Basic configuration -->
+
+  <PropertyGroup>
+    <ImportLombiqHelpfulLibrariesSourceGenerators>true</ImportLombiqHelpfulLibrariesSourceGenerators>
+  </PropertyGroup>
+
+  <!-- External packages -->
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+  </ItemGroup>
+
+  <!-- Additional files -->
+
+  <ItemGroup>
+    <AdditionalFiles Include="libman.json" />
+  </ItemGroup>
+
+</Project>
