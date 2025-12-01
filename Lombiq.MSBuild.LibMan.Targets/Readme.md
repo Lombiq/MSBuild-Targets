@@ -2,7 +2,7 @@
 
 ## About
 
-Target for Microsoft Library Manager integration. Include this project via NuGet or import its Targets file to ensure the vendor assets in your _libman.json_ are fetched before build and included during publishing.
+Target for Microsoft Library Manager integration. Include this project via NuGet or import its Props and Targets files to ensure the vendor assets in your _libman.json_ are fetched before build and included during publishing.
 
 For general details about and usage instructions see the [root Readme](../Readme.md).
 
@@ -15,21 +15,21 @@ Do you want to quickly try out this project and see it in action? Check it out i
 1. Reference the targets in your project file by doing either:
    - Add the `Lombiq.MSBuild.LibMan.Targets` NuGet package to your project.
    - Include an `<Import>` element with the relative path of the Props file at the top end of your project file, and one for the Targets file at bottom end.
-2. Reference `Lombiq.HelpfulLibraries.SourceGenerators` by doing either:
-   - Reference `Lombiq.MSBuild.Core.Targets` or one of its descendant projects (e.g. `Lombiq.MSBuild.Module.Targets`) the same way as described above. Make sure to put it _after_ the LibMan import.
-   - Manually, by following the instructions on [the project's readme](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.SourceGenerators).
+2. If using submodules and the `Lombiq.HelpfulLibraries.SourceGenerators` project is not found, specify the local relative path to the submodule in the `<LombiqHelpfulLibrariesPath>` property.
 
 For example:
 
 ```xml
 <Project>
+    <PropertyGroup>
+        <LombiqHelpfulLibrariesPath>../../../Libraries/Lombiq.HelpfulLibraries</LombiqHelpfulLibrariesPath>
+    </PropertyGroup>
+    
     <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.props" />
-    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.props" />
     
     <!-- Rest of the project file goes here. -->
 
     <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.targets" />
-    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.targets" />
 </Project>
 ```
 
@@ -39,17 +39,14 @@ or
 <Project>
     <ItemGroup>
         <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="<latest version>" />
-        <PackageReference Include="Lombiq.MSBuild.Module.Targets" Version="<latest version>" />
     </ItemGroup>
 </Project>
 ```
 
 ### Usage
 
-1. Create a _libman.json_ file in the project if you don't have one yet. (You can use the `libman init` if you've installed [the CLI utility](https://www.nuget.org/packages/Microsoft.Web.LibraryManager.Cli/).)
-2. Make sure your _libman.json_ file contains the following top level property: `"defaultDestination": "wwwroot/vendors/[Name]"`. This will ensure that the assets are downloaded to the expected location.
-3. Additionally, we suggest this top level property, so you don't have to specify the provider for each package separately: `"defaultProvider": "jsdelivr",`.
-4. Now you can install new NPM packages using the CLI tool like this: `libman install "{NpmPackageName}@{Version}"`, e.g. `libman install chart.js@4.5.1`.
+1. If you don't have a _libman.json_ file yet, build the project after setup. This will copy an empty _libman.json_ file into the project directory, which is pre-configured to use the expected package output directory.
+2. Now you can install new NPM packages using the CLI tool like this: `libman install "{NpmPackageName}@{Version}"`, e.g. `libman install chart.js@4.5.1`.
 
 ## Contributing and support
 

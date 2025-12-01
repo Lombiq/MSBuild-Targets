@@ -3,16 +3,25 @@
   <!-- Source Generator support for Visual Studio -->
 
   <Target Name="CustomBeforeCompile" BeforeTargets="Compile" Condition="'$(NuGetBuild)' != 'true'">
-    <MSBuild Condition="!Exists('$(SourceGeneratorLocation)')" Projects="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
+    <MSBuild Condition="!Exists('$(SourceGeneratorLocation)')"
+             Projects="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
   </Target>
 
-  <!--  Needed for Azure deployment.  -->
+  <!-- Needed for Azure deployment -->
   <Target Name="AddVendors" AfterTargets="LibraryManagerRestore">
     <ItemGroup>
       <Content Include="wwwroot\vendors\**">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
+  </Target>
+
+  <!-- Create a dummy libman.json file if none exists -->
+
+  <Target Name="GenerateNeededFiles" BeforeTargets="BeforeBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)libman.json"
+          DestinationFiles="$(ProjectDir)libman.json"
+          Condition="!Exists('$(ProjectDir)libman.json')"/>
   </Target>
 
 </Project>

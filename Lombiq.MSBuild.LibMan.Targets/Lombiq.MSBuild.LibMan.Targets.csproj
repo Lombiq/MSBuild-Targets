@@ -22,6 +22,7 @@
     <None Include="build\**" Pack="true" PackagePath="build\" />
     <None Include="Lombiq.MSBuild.LibMan.Targets.props" Pack="true" PackagePath="" />
     <None Include="Lombiq.MSBuild.LibMan.Targets.targets" Pack="true" PackagePath="" />
+    <None Include="libman.json" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
