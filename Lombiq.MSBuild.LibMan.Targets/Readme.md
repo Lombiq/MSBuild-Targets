@@ -12,16 +12,44 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ### Setup
 
-To use it, either add the `Lombiq.MSBuild.LibMan.Targets` NuGet package to your project, or include an `<Import>` element with the relative path of the Targets file, if you want to use submodules instead. For example:
+1. Reference the targets in your project file by doing either:
+   - Add the `Lombiq.MSBuild.LibMan.Targets` NuGet package to your project.
+   - Include an `<Import>` element with the relative path of the Props file at the top end of your project file, and one for the Targets file at bottom end.
+2. Reference `Lombiq.HelpfulLibraries.SourceGenerators` by doing either:
+   - Reference `Lombiq.MSBuild.Core.Targets` or one of its descendant projects (e.g. `Lombiq.MSBuild.Module.Targets`) the same way as described above. Make sure to put it _after_ the LibMan import.
+   - Manually, by following the instructions on [the project's readme](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.SourceGenerators).
+
+For example:
 
 ```xml
-<Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.targets" />
+<Project>
+    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.props" />
+    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.props" />
+    
+    <!-- Rest of the project file goes here. -->
+
+    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.targets" />
+    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.targets" />
+</Project>
+```
+
+or
+
+```xml
+<Project>
+    <ItemGroup>
+        <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="<latest version>" />
+        <PackageReference Include="Lombiq.MSBuild.Module.Targets" Version="<latest version>" />
+    </ItemGroup>
+</Project>
 ```
 
 ### Usage
 
 1. Create a _libman.json_ file in the project if you don't have one yet. (You can use the `libman init` if you've installed [the CLI utility](https://www.nuget.org/packages/Microsoft.Web.LibraryManager.Cli/).)
 2. Make sure your _libman.json_ file contains the following top level property: `"defaultDestination": "wwwroot/vendors/[Name]"`. This will ensure that the assets are downloaded to the expected location.
+3. Additionally, we suggest this top level property, so you don't have to specify the provider for each package separately: `"defaultProvider": "jsdelivr",`.
+4. Now you can install new NPM packages using the CLI tool like this: `libman install "{NpmPackageName}@{Version}"`, e.g. `libman install chart.js@4.5.1`.
 
 ## Contributing and support
 

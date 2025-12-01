@@ -10,14 +10,14 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this repository, check out their individual readmes:
 
-- Core: Target for Lombiq-style projects. All other targets import this under the hood.
-- [Module](Lombiq.MSBuild.Module.Targets/Readme.md): Target for a Lombiq Orchard Core module, theme or application.
-- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Target for Microsoft Library Manager integration. Implicitly references `Lombiq.MSBuild.Module.Targets`.
-- [Tests.UI](Lombiq.MSBuild.Tests.UI.Targets/Readme.md): Target for a UI testing projects.
+- Core: Target for Lombiq-style projects. The following other targets import this under the hood.
+  - [Module](Lombiq.MSBuild.Module.Targets/Readme.md): Target for a Lombiq Orchard Core module, theme or application.
+  - [Tests.UI](Lombiq.MSBuild.Tests.UI.Targets/Readme.md): Target for a UI testing projects.
+- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Target for Microsoft Library Manager integration.
 
 ## Configuration
 
-There are some properties you can set before importing either of the Props files.
+There are some properties you can set for `Lombiq.MSBuild.Core.Targets` and  targets based on it, _before_ importing the Props files or NuGet package.
 
 When you set the `<Import{full package name without dots}>` property to true, it imports the project either using `<ProjectReference>` or `<PackageReference>` depending on your current configuration. It also provides centralized version management for the package references. For example:
 

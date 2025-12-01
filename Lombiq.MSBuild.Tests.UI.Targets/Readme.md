@@ -14,8 +14,38 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 To use it, either add the `Lombiq.MSBuild.Tests.UI.Targets` NuGet package to your project, or include an `<Import>` element with the relative path of the Props file, if you want to use submodules instead. For example:
 
+
+1. Reference the targets in your project file by doing either:
+    - Add the `Lombiq.MSBuild.Tests.UI.Targets` NuGet package to your project.
+    - Include an `<Import>` element with the relative path of the Props file at the top end of your project file.
+2. If you want to import a Lombiq package from the list mentioned in the [root Readme](../Readme.md#configuration), add a `<PropertyGroup>` at the top of the project file.
+
+For example:
+
 ```xml
-<Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Tests.UI.Targets/Lombiq.MSBuild.Tests.UI.Targets.targets" />
+<Project>
+    <PropertyGroup>
+        <ImportLombiqHelpfulLibrariesOrchardCore>true</ImportLombiqHelpfulLibrariesOrchardCore>
+    </PropertyGroup>
+    
+    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.props" />
+    
+    <!-- Rest of the project file goes here. -->
+</Project>
+```
+
+or
+
+```xml
+<Project>
+    <PropertyGroup>
+        <ImportLombiqHelpfulLibrariesOrchardCore>true</ImportLombiqHelpfulLibrariesOrchardCore>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Lombiq.MSBuild.Module.Targets" Version="<latest version>" />
+    </ItemGroup>
+</Project>
 ```
 
 ### Configuration

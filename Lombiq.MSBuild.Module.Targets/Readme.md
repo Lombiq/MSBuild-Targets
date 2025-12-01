@@ -12,10 +12,41 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ### Setup
 
-To use it, either add the `Lombiq.MSBuild.Module.Targets` NuGet package to your project, or include an `<Import>` element with the relative path of the Targets file, if you want to use submodules instead. For example:
+1. Reference the targets in your project file by doing either:
+   - Add the `Lombiq.MSBuild.Module.Targets` NuGet package to your project.
+   - Include an `<Import>` element with the relative path of the Props file at the top end of your project file, and one for the Targets file at bottom end.
+2. If you want to import a Lombiq package from the list mentioned in the [root Readme](../Readme.md#configuration), add a `<PropertyGroup>` at the top of the project file.
+
+For example:
 
 ```xml
-<Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.targets" />
+<Project>
+    <PropertyGroup>
+        <ImportLombiqHelpfulLibrariesOrchardCore>true</ImportLombiqHelpfulLibrariesOrchardCore>
+        <ImportLombiqHelpfulLibrariesLinqToDb>true</ImportLombiqHelpfulLibrariesLinqToDb>
+    </PropertyGroup>
+    
+    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.props" />
+    
+    <!-- Rest of the project file goes here. -->
+
+    <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.targets" />
+</Project>
+```
+
+or
+
+```xml
+<Project>
+    <PropertyGroup>
+        <ImportLombiqHelpfulLibrariesOrchardCore>true</ImportLombiqHelpfulLibrariesOrchardCore>
+        <ImportLombiqHelpfulLibrariesLinqToDb>true</ImportLombiqHelpfulLibrariesLinqToDb>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Lombiq.MSBuild.Module.Targets" Version="<latest version>" />
+    </ItemGroup>
+</Project>
 ```
 
 ## Contributing and support
