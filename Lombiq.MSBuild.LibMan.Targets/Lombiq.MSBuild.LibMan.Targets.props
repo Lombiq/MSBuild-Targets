@@ -1,15 +1,43 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <!-- Basic configuration -->
+  <!-- Configuration -->
 
   <PropertyGroup>
-    <ImportLombiqHelpfulLibrariesSourceGenerators>true</ImportLombiqHelpfulLibrariesSourceGenerators>
+    <LombiqHelpfulLibrariesPath Condition="'$(LombiqHelpfulLibrariesPath)' == '' AND Exists('..\..\..\Libraries\Lombiq.HelpfulLibraries')">..\..\..\Libraries\Lombiq.HelpfulLibraries</LombiqHelpfulLibrariesPath>
+    <LombiqHelpfulLibrariesPath Condition="'$(LombiqHelpfulLibrariesPath)' == '' AND Exists('..\..\Libraries\Lombiq.HelpfulLibraries')">..\..\Libraries\Lombiq.HelpfulLibraries</LombiqHelpfulLibrariesPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(NuGetBuild)' != 'true'">
+    <_SourceGeneratorLocation>$(LombiqHelpfulLibrariesPath)\Lombiq.HelpfulLibraries.SourceGenerators\bin\$(Configuration)\netstandard2.0\Lombiq.HelpfulLibraries.SourceGenerators.dll</_SourceGeneratorLocation>
+    <SourceGeneratorLocation Condition="'$(SourceGeneratorLocation)' == '' AND Exists(_SourceGeneratorLocation)">$(_SourceGeneratorLocation)</SourceGeneratorLocation>
   </PropertyGroup>
 
   <!-- External packages -->
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+  </ItemGroup>
+
+  <!-- Lombiq Packages -->
+
+  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(LombiqHelpfulLibrariesPath)\Lombiq.HelpfulLibraries.Attributes\Lombiq.HelpfulLibraries.Attributes.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="true" />
+    <ProjectReference Include="$(LombiqHelpfulLibrariesPath)\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes"
+                      Version="12.5.0"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="true" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators"
+                      Version="12.5.0"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
   </ItemGroup>
 
   <!-- Additional files -->
