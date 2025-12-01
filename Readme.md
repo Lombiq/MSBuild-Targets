@@ -1,3 +1,5 @@
+[![Lombiq.MSBuild.LibMan.Targets NuGet](https://img.shields.io/nuget/v/Lombiq.MSBuild.LibMan.Targets?label=Lombiq.MSBuild.LibMan.Targets)](https://www.nuget.org/packages/Lombiq.MSBuild.LibMan.Targets/)
+
 # Lombiq MSBuild Targets
 
 ## About
