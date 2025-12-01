@@ -15,11 +15,11 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType.Trim().ToUpperInvariant())' == 'MODULE'" />
-    <PackageReference Include="OrchardCore.Theme.Targets" Version="$(OrchardCoreVersion)" Condition="'$(OrchardCoreProjectType.Trim().ToUpperInvariant())' == 'THEME'" />
-    <PackageReference Include="OrchardCore.Application.Targets" Version="$(OrchardCoreVersion)" Condition="$(OrchardCoreProjectType.TrimStart().ToUpperInvariant().StartsWith('APP'))" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="$(OrchardCoreVersion)" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="2.1.0" Condition="'$(OrchardCoreProjectType.Trim().ToUpperInvariant())' == 'MODULE'" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="2.1.0" Condition="'$(OrchardCoreProjectType.Trim().ToUpperInvariant())' == 'THEME'" />
+    <PackageReference Include="OrchardCore.Application.Targets" Version="2.1.0" Condition="$(OrchardCoreProjectType.TrimStart().ToUpperInvariant().StartsWith('APP'))" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="2.1.0" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.0" />
   </ItemGroup>
 
   <!-- Ensure recipes are included -->
