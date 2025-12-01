@@ -6,10 +6,6 @@
     <ImportLombiqHelpfulLibrariesSourceGenerators>true</ImportLombiqHelpfulLibrariesSourceGenerators>
   </PropertyGroup>
 
-  <!-- Import core props -->
-
-  <Import Project="$(MSBuildThisFileDirectory)\..\Lombiq.MSBuild.Module.Targets\Lombiq.MSBuild.Module.Targets.props" />
-
   <!-- External packages -->
 
   <ItemGroup>

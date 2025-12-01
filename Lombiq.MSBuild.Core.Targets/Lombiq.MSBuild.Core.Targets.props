@@ -3,8 +3,8 @@
   <!-- Basic configuration -->
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
+    <_LombiqMSBuildCoreTargetsImported>true</_LombiqMSBuildCoreTargetsImported>
   </PropertyGroup>
 
   <!-- NuGet package metadata -->
