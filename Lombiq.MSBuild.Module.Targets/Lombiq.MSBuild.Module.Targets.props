@@ -9,7 +9,9 @@
 
   <!-- Import core props -->
 
-  <Import Project="$(MSBuildThisFileDirectory)../Lombiq.MSBuild.Core.Targets/Lombiq.MSBuild.Core.Targets.props" />
+  <Import Project="$(MSBuildThisFileDirectory)/Lombiq.MSBuild.Core.Targets.props" Condition="'$(NuGetBuild)' == 'true'"/>
+  <Import Project="$(MSBuildThisFileDirectory)../Lombiq.MSBuild.Core.Targets/Lombiq.MSBuild.Core.Targets.props"
+          Condition="'$(NuGetBuild)' != 'true'"/>
 
   <!-- External packages -->
 

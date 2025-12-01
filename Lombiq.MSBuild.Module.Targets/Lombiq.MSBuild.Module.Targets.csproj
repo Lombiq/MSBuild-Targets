@@ -20,12 +20,10 @@
     <None Include="Readme.md" />
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
     <None Include="build\**" Pack="true" PackagePath="build\" />
-    <None Include="*.props" Pack="true" PackagePath="" />
-    <None Include="*.targets" Pack="true" PackagePath="" />
-    <None Update="build\Lombiq.MSBuild.Module.Targets.targets">
-      <Pack>true</Pack>
-      <PackagePath>build/</PackagePath>
-    </None>
+    <None Include="Lombiq.MSBuild.Module.Targets.props" Pack="true" PackagePath="" />
+    <None Include="Lombiq.MSBuild.Module.Targets.targets" Pack="true" PackagePath="" />
+    <None Include="..\Lombiq.MSBuild.Core.Targets\Lombiq.MSBuild.Core.Targets.props" Pack="true" PackagePath="" />
+    <None Include="..\Lombiq.MSBuild.Core.Targets\NuGetPackages.props" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
