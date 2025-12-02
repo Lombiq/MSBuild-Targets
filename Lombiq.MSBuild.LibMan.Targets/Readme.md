@@ -43,6 +43,7 @@ For example:
 ```xml
 <Project>
     <ItemGroup>
+        <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
         <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="<latest version>" />
         <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
         <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
