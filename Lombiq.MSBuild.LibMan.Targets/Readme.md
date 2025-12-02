@@ -12,10 +12,10 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ### Setup
 
-1. Reference the targets in your project file by doing either:
-   - Add the `Lombiq.MSBuild.LibMan.Targets` NuGet package to your project.
-   - Include an `<Import>` element with the relative path of the Props file at the top end of your project file, and one for the Targets file at bottom end.
-2. If using submodules and the `Lombiq.HelpfulLibraries.SourceGenerators` project is not found, specify the local relative path to the submodule in the `<LombiqHelpfulLibrariesPath>` property.
+#### From Git submodule
+
+1. Reference the targets in your project file by adding an `<Import>` element with the relative path of the Props file at the top end of your project file, and one for the Targets file at bottom end.
+2. If the `Lombiq.HelpfulLibraries.SourceGenerators` project is not found, specify the local relative path to the submodule in the `<LombiqHelpfulLibrariesPath>` property.
 
 For example:
 
@@ -33,7 +33,12 @@ For example:
 </Project>
 ```
 
-or
+#### From NuGet package
+
+1. Reference the targets in your project file by adding the `Lombiq.MSBuild.LibMan.Targets` NuGet package to your project.
+2. If you want to use the automatically generated version numbers (e.g. when declaring an asset in the Orchard Core resource manager), you have to include those packages as well. Reference the [Source Generators](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.SourceGenerators/) and [Attributes](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.Attributes/) projects from the Lombiq HelpfulLibraries.
+
+For example:
 
 ```xml
 <Project>
@@ -49,6 +54,7 @@ or
 
 1. If you don't have a _libman.json_ file yet, build the project after setup. This will copy an empty _libman.json_ file into the project directory, which is pre-configured to use the expected package output directory.
 2. Now you can install new NPM packages using the CLI tool like this: `libman install "{NpmPackageName}@{Version}"`, e.g. `libman install chart.js@4.5.1`.
+3. If you want to use the automatically generated version numbers (e.g. when declaring an asset in the Orchard Core resource manager), follow [the instructions in the Helpful Libraries documentation](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.SourceGenerators#using-the-libmanresourceversiongenerator).
 
 ## Contributing and support
 
