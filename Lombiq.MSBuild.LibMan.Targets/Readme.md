@@ -15,19 +15,17 @@ Do you want to quickly try out this project and see it in action? Check it out i
 #### From Git submodule
 
 1. Reference the targets in your project file by adding an `<Import>` element with the relative path of the Props file at the top end of your project file, and one for the Targets file at bottom end.
-2. If the `Lombiq.HelpfulLibraries.SourceGenerators` project is not found, specify the local relative path to the submodule in the `<LombiqHelpfulLibrariesPath>` property.
+2. If the `Lombiq.HelpfulLibraries.SourceGenerators` project is not found, specify the local relative path to the submodule in the `<LombiqHelpfulLibrariesPath>` property _before_ the `<Import>` element for the Props file.
 
 For example:
 
 ```xml
 <Project>
-    <PropertyGroup>
-        <LombiqHelpfulLibrariesPath>../../../Libraries/Lombiq.HelpfulLibraries</LombiqHelpfulLibrariesPath>
-    </PropertyGroup>
-    
     <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.props" />
     
-    <!-- Rest of the project file goes here. -->
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+    </ItemGroup>
 
     <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.targets" />
 </Project>
@@ -35,15 +33,16 @@ For example:
 
 #### From NuGet package
 
-1. Reference the targets in your project file by adding the `Lombiq.MSBuild.LibMan.Targets` NuGet package to your project.
-2. If you want to use the automatically generated version numbers (e.g. when declaring an asset in the Orchard Core resource manager), you have to include those packages as well. Reference the [Source Generators](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.SourceGenerators/) and [Attributes](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.Attributes/) projects from the Lombiq HelpfulLibraries.
+1. Reference the targets in your project file by adding the [`Lombiq.MSBuild.LibMan.Targets`](https://www.nuget.org/packages/Lombiq.MSBuild.LibMan.Targets) NuGet package.
+2. To use Library Manager during build, reference the [`Microsoft.Web.LibraryManager.Build`](https://www.nuget.org/packages/Lombiq.MSBuild.LibMan.Targets) NuGet package.
+3. Optionally, if you want to use the automatically generated version numbers (e.g. when declaring an asset in the Orchard Core resource manager), you have to include the [`Lombiq.HelpfulLibraries.SourceGenerators`](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.SourceGenerators/) and [`Lombiq.HelpfulLibraries.Attributes`](https://www.nuget.org/packages/Lombiq.HelpfulLibraries.Attributes/) projects from the Lombiq HelpfulLibraries.
 
 For example:
 
 ```xml
 <Project>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+        <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="<latest version>" />
         <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="<latest version>" />
         <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
         <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />

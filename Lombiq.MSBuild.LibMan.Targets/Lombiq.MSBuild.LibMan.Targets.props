@@ -12,12 +12,6 @@
     <SourceGeneratorLocation Condition="'$(SourceGeneratorLocation)' == '' AND Exists(_SourceGeneratorLocation)">$(_SourceGeneratorLocation)</SourceGeneratorLocation>
   </PropertyGroup>
 
-  <!-- External packages -->
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
-  </ItemGroup>
-
   <!-- Lombiq Packages -->
 
   <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
