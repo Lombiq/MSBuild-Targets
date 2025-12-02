@@ -29,17 +29,6 @@
                       ReferenceOutputAssembly="false" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes"
-                      Version="12.5.0"
-                      OutputItemType="Analyzer"
-                      ReferenceOutputAssembly="true" />
-    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators"
-                      Version="12.5.0"
-                      OutputItemType="Analyzer"
-                      ReferenceOutputAssembly="false" />
-  </ItemGroup>
-
   <!-- Additional files -->
 
   <ItemGroup>

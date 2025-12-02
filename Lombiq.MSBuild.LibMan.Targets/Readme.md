@@ -39,6 +39,8 @@ or
 <Project>
     <ItemGroup>
         <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="<latest version>" />
+        <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
+        <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 </Project>
 ```
