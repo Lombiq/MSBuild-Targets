@@ -50,13 +50,6 @@ For example:
 </Project>
 ```
 
-> [!WARNING]
-> In Orchard Core modules, importing LibMan and `OrchardCore.Module.Targets` can cause a conflict if you want to publish it as a NuGet package. This is because both want to pack a _build/Your.Project.props_ file during package build. As a workaround, this project can unplug the file packed by `OrchardCore.Module.Targets` and duplicate its functionality internally. To use it, you just have expose the path of the `OrchardCore.Module.Targets` package as a variable by adding the `GeneratePathProperty` attribute like this:
->
-> ```xml
-> <PackageReference Include="OrchardCore.Module.Targets" Version="<latest version>" GeneratePathProperty="true" />
-> ```
-
 ### Usage
 
 1. If you don't have a _libman.json_ file yet, build the project after setup. This will copy an empty _libman.json_ file into the project directory, which is pre-configured to use the expected package output directory.
