@@ -3,11 +3,5 @@
     <NuGetBuild>true</NuGetBuild>
   </PropertyGroup>
 
-  <!-- Workaround for conflict with OrchardCore.Module.Targets. -->
-  <ItemGroup Condition="Exists('$(PkgOrchardCore_Module_Targets)')">
-    <None Remove="$(PkgOrchardCore_Module_Targets)\build\Package.Build.props" />
-    <ModulePackageNames Include="$(MSBuildProjectName)" />
-  </ItemGroup>
-
   <Import Project="$(MSBuildThisFileDirectory)/../$(MSBuildThisFileName).props"/>
 </Project>

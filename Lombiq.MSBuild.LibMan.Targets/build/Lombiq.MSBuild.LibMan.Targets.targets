@@ -1,3 +1,41 @@
 <Project>
   <Import Project="$(MSBuildThisFileDirectory)/../$(MSBuildThisFileName).targets"/>
+
+  <!-- This task captures competing build\{ProjectName}.props files used by NuGet packages and merges their content
+       into an intermediate file to use instead, which eliminates packaging conflicts. -->
+  <Target Name="NuspecConflictResolution" BeforeTargets="GenerateNuspec">
+
+    <!-- Collect all competing package props file, then remove them from the list to prevent a NuGet warning. -->
+    <ItemGroup>
+      <PackageProps Include="@(_PackageFiles)" Condition="'%(PackagePath)' == 'build\$(ProjectName).props'" />
+      <_PackageFiles Remove="@(_PackageFiles)" Condition="'%(PackagePath)' == 'build\$(ProjectName).props'" />
+    </ItemGroup>
+
+    <!-- Concatenate each competing props file into a single mega XML that's still valid, then get the contents inside
+         the root elements. Note that the query uses "/Projects/*/*" instead of "/Projects/Project/*" to ignore 
+         complications related to xmlns. -->
+    <ReadLinesFromFile File="%(PackageProps.Identity)">
+      <Output TaskParameter="Lines" ItemName="PackagePropsFileContents" />
+    </ReadLinesFromFile>
+    <XmlPeek XmlContent="&lt;Projects&gt;@(PackagePropsFileContents, '')&lt;/Projects&gt;" Query="/Projects/*/*">
+      <Output TaskParameter="Result" ItemName="PackagePropsContents" />
+    </XmlPeek>
+
+    <!-- Write out the captured elements into a temporary file. -->
+    <PropertyGroup>
+      <FinalPackagePropsPath>$(IntermediateOutputPath)Package.Build.props</FinalPackagePropsPath>
+      <FinalPackagePropsContent>&lt;Project&gt;%0a%0a@(PackagePropsContents, '%0a')%0a%0a&lt;/Project&gt;</FinalPackagePropsContent>
+    </PropertyGroup>
+    
+    <WriteLinesToFile File="$(FinalPackagePropsPath)" Lines="$(FinalPackagePropsContent)" Overwrite="true" />
+
+    <!-- Register the temporary file as the new, final NuGet props file. -->
+    <ItemGroup>
+      <_PackageFiles Include="$(FinalPackagePropsPath)"
+                     Pack="true"
+                     PackagePath="build\$(AssemblyName).props"
+                     BuildAction="None" />
+    </ItemGroup>
+
+  </Target>
 </Project>
