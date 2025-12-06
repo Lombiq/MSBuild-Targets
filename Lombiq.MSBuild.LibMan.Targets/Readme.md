@@ -2,7 +2,7 @@
 
 ## About
 
-Target for Microsoft Library Manager integration. Include this project via NuGet or import its Props and Targets files to ensure the vendor assets in your _libman.json_ are fetched before build and included during publishing.
+Targets for [Microsoft Library Manager](https://github.com/aspnet/LibraryManager) integration. Include this project via NuGet or import its Props and Targets files to ensure the vendor assets in your _libman.json_ are fetched before build and included during publishing.
 
 For general details about and usage instructions see the [root Readme](../Readme.md).
 
@@ -12,7 +12,7 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ### Setup
 
-#### From Git submodule
+#### From a Git submodule
 
 1. Reference the targets in your project file by adding an `<Import>` element with the relative path of the Props file at the top end of your project file, and one for the Targets file at bottom end.
 2. If the `Lombiq.HelpfulLibraries.SourceGenerators` project is not found, specify the local relative path to the submodule in the `<LombiqHelpfulLibrariesPath>` property _before_ the `<Import>` element for the Props file.
@@ -31,7 +31,7 @@ For example:
 </Project>
 ```
 
-#### From NuGet package
+#### From a NuGet package
 
 1. Reference the targets in your project file by adding the [`Lombiq.MSBuild.LibMan.Targets`](https://www.nuget.org/packages/Lombiq.MSBuild.LibMan.Targets) NuGet package.
 2. To use Library Manager during build, reference the [`Microsoft.Web.LibraryManager.Build`](https://www.nuget.org/packages/Lombiq.MSBuild.LibMan.Targets) NuGet package.

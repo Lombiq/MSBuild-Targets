@@ -8,11 +8,11 @@
     <Title>Lombiq MSBuild Targets - Library Manager for Orchard Core Modules</Title>
     <Authors>Lombiq Technologies</Authors>
     <Copyright>Copyright © 2025, Lombiq Technologies Ltd.</Copyright>
-    <Description>Target for Microsoft Library Manager integration.</Description>
+    <Description>MSBuild target for Microsoft Library Manager integration. See the project website for detailed documentation.</Description>
     <PackageIcon>NuGetIcon.png</PackageIcon>
     <PackageTags>OrchardCore;Lombiq;AspNetCore;LibMan;LibraryManager</PackageTags>
     <RepositoryUrl>https://github.com/Lombiq/MSBuild-Targets</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/Lombiq.MSBuild.LibMan.Targets/Readme.md</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.LibMan.Targets/Readme.md</PackageProjectUrl>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
 

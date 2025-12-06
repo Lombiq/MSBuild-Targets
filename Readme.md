@@ -4,15 +4,15 @@
 
 ## About
 
-It contains MSBuild Target and Props files to streamline repetitive project configuration.
+Contains MSBuild Targets and Props files to streamline repetitive project configuration.
 
 Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
 
 ## Documentation
 
-To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this repository, check out their individual readmes:
+To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this repository, check out their individual Readmes:
 
-- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Target for Microsoft Library Manager integration.
+- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Targets for [Microsoft Library Manager](https://github.com/aspnet/LibraryManager) integration.
 
 ## Contributing and support
 
