@@ -4,6 +4,8 @@
 
 Targets for [Microsoft Library Manager](https://github.com/aspnet/LibraryManager) integration. Include this project via NuGet or import its Props and Targets files to ensure the vendor assets in your _libman.json_ are fetched before build and included during publishing.
 
+This target reduces [configuration boilerplate related to code generation](https://github.com/Lombiq/Helpful-Libraries/tree/dev/Lombiq.HelpfulLibraries.SourceGenerators) and applies necessary workarounds (e.g. issues with deployment mentioned [here](https://github.com/aspnet/LibraryManager/issues/799)).
+
 For general details about and usage instructions see the [root Readme](../Readme.md).
 
 Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
