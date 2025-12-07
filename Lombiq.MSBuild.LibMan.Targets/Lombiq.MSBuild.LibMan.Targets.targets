@@ -12,6 +12,7 @@
     <ItemGroup>
       <Content Include="wwwroot\vendors\**">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
     </ItemGroup>
   </Target>
