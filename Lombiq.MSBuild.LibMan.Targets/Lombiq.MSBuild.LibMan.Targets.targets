@@ -8,12 +8,14 @@
   </Target>
 
   <!-- Needed for Azure deployment -->
+
   <Target Name="AddVendors" AfterTargets="LibraryManagerRestore">
     <ItemGroup>
       <Content Include="wwwroot\vendors\**">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
+      <EmbeddedResource Include="wwwroot\vendors\**" />
     </ItemGroup>
   </Target>
 
@@ -27,6 +29,7 @@
 
   <!-- This task captures competing build\{ProjectName}.props files used by NuGet packages and merges their content
        into an intermediate file to use instead, which eliminates packaging conflicts. -->
+
   <Target Name="NuspecConflictResolution" BeforeTargets="GenerateNuspec">
 
     <!-- Collect all competing package props file, then remove them from the list to prevent a NuGet warning. -->
