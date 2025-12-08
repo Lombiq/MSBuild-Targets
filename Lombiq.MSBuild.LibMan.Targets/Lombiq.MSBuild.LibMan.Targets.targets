@@ -2,7 +2,7 @@
 
   <!-- Source Generator support for Visual Studio -->
 
-  <Target Name="CustomBeforeCompile" BeforeTargets="Compile" Condition="'$(NuGetBuild)' != 'true'">
+  <Target Name="CustomBeforeCompile" BeforeTargets="Compile" Condition="'$(FromNuGet)' != 'true'">
     <MSBuild Condition="!Exists('$(SourceGeneratorLocation)')"
              Projects="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
   </Target>

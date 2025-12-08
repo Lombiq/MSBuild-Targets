@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <NuGetBuild>true</NuGetBuild>
+    <FromNuGet>true</FromNuGet>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)/../$(MSBuildThisFileName).props"/>

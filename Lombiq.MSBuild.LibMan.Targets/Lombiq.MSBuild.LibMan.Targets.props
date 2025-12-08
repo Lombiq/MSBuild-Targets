@@ -1,5 +1,9 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+  <PropertyGroup>
+    <FromNuGet Condition="'$(FromNuGet)' == ''">$(NuGetBuild)</FromNuGet>
+  </PropertyGroup>
+
   <!-- Configuration -->
 
   <PropertyGroup>
@@ -7,14 +11,14 @@
     <LombiqHelpfulLibrariesPath Condition="'$(LombiqHelpfulLibrariesPath)' == '' AND Exists('..\..\Libraries\Lombiq.HelpfulLibraries')">..\..\Libraries\Lombiq.HelpfulLibraries</LombiqHelpfulLibrariesPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(NuGetBuild)' != 'true'">
+  <PropertyGroup Condition="'$(FromNuGet)' != 'true'">
     <_SourceGeneratorLocation>$(LombiqHelpfulLibrariesPath)\Lombiq.HelpfulLibraries.SourceGenerators\bin\$(Configuration)\netstandard2.0\Lombiq.HelpfulLibraries.SourceGenerators.dll</_SourceGeneratorLocation>
     <SourceGeneratorLocation Condition="'$(SourceGeneratorLocation)' == '' AND Exists(_SourceGeneratorLocation)">$(_SourceGeneratorLocation)</SourceGeneratorLocation>
   </PropertyGroup>
 
   <!-- Lombiq Packages -->
 
-  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+  <ItemGroup Condition="'$(FromNuGet)' != 'true'">
     <ProjectReference Include="$(LombiqHelpfulLibrariesPath)\Lombiq.HelpfulLibraries.Attributes\Lombiq.HelpfulLibraries.Attributes.csproj"
                       OutputItemType="Analyzer"
                       ReferenceOutputAssembly="true" />
