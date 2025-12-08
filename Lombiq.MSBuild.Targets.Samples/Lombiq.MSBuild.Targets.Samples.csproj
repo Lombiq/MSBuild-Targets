@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Importing Lombiq.MSBuild.LibMan.Targets either directly, or as a NuGet package detects your libman.json file
+       (creates one if none exists), configures source generation, and applies Orchard Core specific fixes. -->
+  <Import Project="..\Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.props"
+          Condition="'$(NuGetBuild)' != 'true'"/>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- You have to explicitly include other NuGet packages. For Lombiq.MSBuild.LibMan.Targets, this means only
+       Microsoft.Web.LibraryManager.Build if you import it directly. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+    <!-- When referencing Lombiq.MSBuild.LibMan.Targets as a NuGet package, you have to explicitly include the
+         Helpful Libraries packages too, if you want to use source generation. -->
+    <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="1.0.0-alpha.12.nest-643" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- This is just included for unit testing. -->
+    <None Update="wwwroot\vendors\async\dist\async.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Don't forget to import the targets file too! -->
+  <Import Project="..\Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.targets"
+          Condition="'$(NuGetBuild)' != 'true'"/>
+
+  <!-- NEXT STATION: ResourcesExample.cs -->
+
+</Project>

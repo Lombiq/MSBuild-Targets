@@ -14,6 +14,8 @@ To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this reposi
 
 - [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Targets for [Microsoft Library Manager](https://github.com/aspnet/LibraryManager) integration.
 
+Check out the [`Lombiq.MSBuild.Targets.Samples` project](Lombiq.MSBuild.Targets.Samples/Readme.md) for examples.
+
 ## Contributing and support
 
 Bug reports, feature requests, comments, questions, code contributions and love letters are warmly welcome. You can send them to us via GitHub issues and pull requests. Please adhere to our [open-source guidelines](https://lombiq.com/open-source-guidelines) while doing so.
