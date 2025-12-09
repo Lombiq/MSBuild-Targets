@@ -1,3 +1,5 @@
+using Lombiq.HelpfulLibraries.Attributes;
+
 namespace Lombiq.MSBuild.Targets.Samples;
 
 // Here you can see that the version strings from libman.json are exposed as static constants without any special
