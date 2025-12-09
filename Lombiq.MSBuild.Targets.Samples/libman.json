@@ -1,0 +1,11 @@
+{
+  "version": "3.0",
+  "defaultProvider": "jsdelivr",
+  "defaultDestination": "wwwroot/vendors/[Name]",
+  "libraries": [
+    {
+      "library": "async@3.2.6",
+      "files": [ "dist/async.min.js" ]
+    }
+  ]
+}

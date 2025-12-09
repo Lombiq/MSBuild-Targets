@@ -1,14 +1,20 @@
-# Lombiq <add project name here>
+# Lombiq MSBuild Targets
+
+[![Lombiq.MSBuild.LibMan.Targets NuGet](https://img.shields.io/nuget/v/Lombiq.MSBuild.LibMan.Targets?label=Lombiq.MSBuild.LibMan.Targets)](https://www.nuget.org/packages/Lombiq.MSBuild.LibMan.Targets/)
 
 ## About
 
-Add a general overview of the project here. Keep or remove the OSOCE note below as necessary.
+Contains MSBuild Targets and Props files to streamline repetitive project configuration.
 
 Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
 
 ## Documentation
 
-Add detailed documentation here. If it's a lot of content then create documentation pages under the *Docs* folder and link pages here.
+To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this repository, check out their individual Readmes:
+
+- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Targets for [Microsoft Library Manager](https://github.com/aspnet/LibraryManager) integration.
+
+Check out the [`Lombiq.MSBuild.Targets.Samples` project](Lombiq.MSBuild.Targets.Samples/Readme.md) for examples.
 
 ## Contributing and support
 
