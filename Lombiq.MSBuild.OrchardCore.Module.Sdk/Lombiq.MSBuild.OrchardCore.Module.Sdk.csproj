@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Lombiq.MSBuild.Sdk</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Title>Lombiq MSBuild SDK</Title>
+    <Authors>Lombiq Technologies</Authors>
+    <Copyright>Copyright © 2025, Lombiq Technologies Ltd.</Copyright>
+    <Description>MSBuild target for Microsoft Library Manager integration. See the project website for detailed documentation.</Description>
+    <PackageIcon>NuGetIcon.png</PackageIcon>
+    <PackageTags>OrchardCore;Lombiq;AspNetCore;LibMan;LibraryManager</PackageTags>
+    <RepositoryUrl>https://github.com/Lombiq/MSBuild-Targets</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.LibMan.Targets/Readme.md</PackageProjectUrl>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>
