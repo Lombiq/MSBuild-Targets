@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Readme.md" Condition="Exists('Readme.md')" />
+    <None Include="..\Readme.md" Condition="!Exists('Readme.md') AND Exists('..\Readme.md')" />
+    <None Include="NuGetIcon.png" Pack="true" PackagePath="" Condition="Exists('NuGetIcon.png')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.Module.Targets" Version="3.0.0-preview-18937" />
+  </ItemGroup>
+</Project>

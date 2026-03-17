@@ -1,4 +1,4 @@
 <Project>
   <Import Project="$(MSBuildThisFileDirectory)Core.props" />
-  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk.Razor" />
+  <Sdk Name="Microsoft.NET.Sdk.Razor" />
 </Project>
