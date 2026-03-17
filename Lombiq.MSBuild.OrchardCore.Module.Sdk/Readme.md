@@ -1,0 +1,1 @@
+# Lombiq MSBuild Targets - Library Manager for Orchard Core Modules
