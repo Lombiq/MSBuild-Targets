@@ -1,4 +1,8 @@
 <Project>
+  <PropertyGroup>
+    <FromNuGet>true</FromNuGet>
+  </PropertyGroup>
+  
   <Import Project="$(MSBuildThisFileDirectory)Core.props" />
   <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk.Razor" />
 </Project>
