@@ -1,0 +1,4 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)Core.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.OrchardCore.Module.Sdk/Sdk/Import.props" />
+</Project>
