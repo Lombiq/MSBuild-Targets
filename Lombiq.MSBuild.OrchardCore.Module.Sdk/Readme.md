@@ -14,10 +14,14 @@ It can be used by updating your project XML's root `Sdk` attribute to contain th
 </Project>
 ```
 
-Or by removing the `Sdk` attribute and importing the .props and .targets files directly form the NuGet package:
+Or by removing the `Sdk` attribute and importing the .props and .targets files directly form the NuGet package. In this case the `Sdk` attribute of the import indicates where to look for the file in the Nuget package cache.
 
 ```xml
 <Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
   <Import Project="Sdk.props" Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk" Version="1.0.0" />
   ...
   <Import Project="Sdk.targets" Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk" Version="1.0.0" />
