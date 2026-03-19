@@ -19,6 +19,12 @@
     <PackageReference Include="OrchardCore.Module.Targets" Version="3.0.0-preview-18937" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Recipes\*.recipe.json">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
   <ItemGroup Condition="'$(FromNuGet)' != 'true'">
     <ProjectReference Include="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj" />
   </ItemGroup>
