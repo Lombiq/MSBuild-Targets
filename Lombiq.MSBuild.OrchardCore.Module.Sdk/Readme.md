@@ -6,7 +6,7 @@ MSBuild SDK for Orchard Core modules that also use [Lombiq Helpful Libraries](ht
 
 ## Usage
 
-It can be used by updating your project XML's root `Sdk` attribute to contain the Nuget package name and version, like this: 
+It can be used by updating your project XML's root `Sdk` attribute to contain the Nuget package name and version, like this:
 
 ```xml
 <Project Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk/1.0.0">
