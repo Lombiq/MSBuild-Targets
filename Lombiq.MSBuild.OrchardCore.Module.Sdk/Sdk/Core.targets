@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup Condition="'$(IsLombiqProject)' == 'true'">
     <Authors Condition="'$(Authors)' == ''">Lombiq Technologies</Authors>
-    <CopyrightYear Condition="'$(CopyrightYear)' == ''">2026</CopyrightYear>
+    <CopyrightYear Condition="'$(CopyrightYear)' == ''">20XX</CopyrightYear>
     <Copyright Condition="'$(Copyright)' == ''">Copyright © $(CopyrightYear), Lombiq Technologies Ltd.</Copyright>
     <Description Condition="'$(Description)' == ''">$(Title): $(DescriptionBody)</Description>
     <PackageIcon Condition="Exists('NuGetIcon.png')">NuGetIcon.png</PackageIcon>
@@ -9,4 +9,6 @@
     <PackageProjectUrl Condition="'$(PackageProjectUrl)' == ''">$(RepositoryUrl)</PackageProjectUrl>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)LibManIntegration.targets" Condition="'$(UseLibMan)' == 'true'" />
 </Project>

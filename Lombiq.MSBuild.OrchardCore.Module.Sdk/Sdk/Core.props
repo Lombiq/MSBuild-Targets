@@ -2,7 +2,10 @@
   <PropertyGroup>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
+    <UseLibMan Condition="'$(UseLibMan)' == '' AND Exists('libman.json')">true</UseLibMan>
   </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)LibManIntegration.props" Condition="'$(UseLibMan)' == 'true'" />
 
   <ItemGroup>
     <None Include="Readme.md" Condition="Exists('Readme.md')" />

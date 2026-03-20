@@ -1,0 +1,14 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.props"
+          Condition="'$(FromNuGet)' != 'true'"/>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(FromNuGet)' == 'true'">
+    <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="1.0.0-alpha.12.nest-643" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.6.1-alpha.5.osoe-925" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.6.1-alpha.5.osoe-925" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+</Project>
