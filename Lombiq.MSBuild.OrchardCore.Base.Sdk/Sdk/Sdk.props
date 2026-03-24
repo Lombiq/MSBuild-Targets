@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <FromNuGet>true</FromNuGet>
+  </PropertyGroup>
+  
+  <Import Project="$(MSBuildThisFileDirectory)Core.props" />
+</Project>

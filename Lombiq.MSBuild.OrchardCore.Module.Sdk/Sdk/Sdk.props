@@ -1,8 +1,5 @@
 <Project>
-  <PropertyGroup>
-    <FromNuGet>true</FromNuGet>
-  </PropertyGroup>
-  
+  <Import Project="$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.OrchardCore.Base.Sdk/Sdk/Sdk.props" />
   <Import Project="$(MSBuildThisFileDirectory)Core.props" />
   <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk.Razor" />
 </Project>

@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup Condition="'$(IsLombiqProject)' == 'true'">
+    <Authors Condition="'$(Authors)' == ''">Lombiq Technologies</Authors>
+    <CopyrightYear Condition="'$(CopyrightYear)' == ''">20XX</CopyrightYear>
+    <Copyright Condition="'$(Copyright)' == ''">Copyright © $(CopyrightYear), Lombiq Technologies Ltd.</Copyright>
+    <Description Condition="'$(Description)' == ''">$(Title): $(DescriptionBody)</Description>
+    <PackageIcon Condition="Exists('NuGetIcon.png')">NuGetIcon.png</PackageIcon>
+    <PackageTags Condition="'$(PackageTags)' == ''">OrchardCore;Lombiq;AspNetCore</PackageTags>
+    <PackageProjectUrl Condition="'$(PackageProjectUrl)' == ''">$(RepositoryUrl)</PackageProjectUrl>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+  </PropertyGroup>
+</Project>
