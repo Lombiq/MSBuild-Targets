@@ -10,6 +10,9 @@ It can be used by updating your project XML's root `Sdk` attribute to contain th
 
 ```xml
 <Project Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk/1.0.0">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
   ...
 </Project>
 ```
