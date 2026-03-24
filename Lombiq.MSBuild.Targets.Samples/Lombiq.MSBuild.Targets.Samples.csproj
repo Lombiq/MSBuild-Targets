@@ -5,10 +5,6 @@
   <Import Project="..\Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.props"
           Condition="'$(NuGetBuild)' != 'true'"/>
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-  </PropertyGroup>
-
   <!-- You have to explicitly include other NuGet packages. For Lombiq.MSBuild.LibMan.Targets, this means only
        Microsoft.Web.LibraryManager.Build if you import it directly. -->
   <ItemGroup>

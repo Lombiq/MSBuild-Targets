@@ -1,28 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <RootNamespace>Lombiq.MSBuild.Sdk</RootNamespace>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <Title>Lombiq MSBuild SDK - Orchard Core Theme</Title>
-    <Authors>Lombiq Technologies</Authors>
-    <Copyright>Copyright © 2025, Lombiq Technologies Ltd.</Copyright>
     <Description>MSBuild SDK for Orchard Core themes.</Description>
-    <PackageIcon>NuGetIcon.png</PackageIcon>
-    <PackageTags>OrchardCore;Lombiq;AspNetCore</PackageTags>
-    <RepositoryUrl>https://github.com/Lombiq/MSBuild-Targets</RepositoryUrl>
     <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.OrchardCore.Theme.Sdk/Readme.md</PackageProjectUrl>
-    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="Readme.md" />
-    <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
-    <None Include="Sdk\**" Pack="true" PackagePath="Sdk\" />
-  </ItemGroup>
 
 </Project>
