@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\test\Lombiq.Tests\Lombiq.Tests.csproj" />
+    <ProjectReference Include="$(LombiqSolutionRootPath)/test/Lombiq.Tests/Lombiq.Tests.csproj" />
   </ItemGroup>
 
 </Project>
