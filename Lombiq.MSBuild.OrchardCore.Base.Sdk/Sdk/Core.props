@@ -1,11 +1,4 @@
 <Project>
-  <PropertyGroup>
-    <LombiqSolutionRootPathTemp>$(MSBuildThisFileDirectory)../../../../..</LombiqSolutionRootPathTemp>
-    <LombiqSolutionRootPath Condition="'$(LombiqSolutionRootPath)' == ''">$([MSBuild]::MakeRelative('.', $(LombiqSolutionRootPathTemp)))</LombiqSolutionRootPath>
-    <LombiqHelpfulLibrariesPath Condition="'$(LombiqHelpfulLibrariesPath)' == '' AND '$(LombiqSolutionRootPath)' != ''">$(LombiqSolutionRootPath)/src/Libraries/Lombiq.HelpfulLibraries</LombiqHelpfulLibrariesPath>
-    <LombiqAnalyzersPath Condition="'$(LombiqAnalyzersPath)' == '' AND '$(LombiqSolutionRootPath)' != ''">$(LombiqSolutionRootPath)/tools/Lombiq.Analyzers</LombiqAnalyzersPath>
-  </PropertyGroup>
-  
   <ItemGroup>
     <None Include="Readme.md" Condition="Exists('Readme.md')" />
     <None Include="..\Readme.md" Condition="!Exists('Readme.md') AND Exists('..\Readme.md')" />
