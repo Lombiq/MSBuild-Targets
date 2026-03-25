@@ -1,0 +1,5 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.OrchardCore.Base.Sdk/Sdk/Import.props" />
+  <Import Project="$(MSBuildThisFileDirectory)Core.props" />
+  <Sdk Name="Microsoft.NET.Sdk" />
+</Project>

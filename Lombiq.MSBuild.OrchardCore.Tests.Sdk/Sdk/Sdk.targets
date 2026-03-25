@@ -1,0 +1,5 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.OrchardCore.Base.Sdk/Sdk/Sdk.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)Core.targets" />
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>
