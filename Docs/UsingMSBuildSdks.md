@@ -1,7 +1,7 @@
 # Using MSBuild SDKs
 
 > [!NOTE]
-> The folling document uses [Lombiq.MSBuild.OrchardCore.Module.Sdk](../Lombiq.MSBuild.OrchardCore.Module.Sdk/Readme.md) as an example, but you can achieve the same with all of the `Lombiq.MSBuild.OrchardCore.*.Sdk` projects.
+> The following document uses [Lombiq.MSBuild.OrchardCore.Module.Sdk](../Lombiq.MSBuild.OrchardCore.Module.Sdk/Readme.md) as an example, but you can achieve the same with all of the `Lombiq.MSBuild.OrchardCore.*.Sdk` projects.
 
 It can be used by updating your project XML's root `Sdk` attribute to contain the Nuget package name and version, like this:
 
