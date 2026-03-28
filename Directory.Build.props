@@ -25,6 +25,14 @@
         <None Include="Sdk\**" Pack="true" PackagePath="Sdk\" Condition="Exists('Sdk')" />
         <None Include="build\**" Pack="true" PackagePath="build\" Condition="Exists('build')" />
       </ItemGroup>
+
+      <ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Sdk')) AND MSBuildProjectName != 'Lombiq.MSBuild.OrchardCore.Base.Sdk'">
+        <None Include="..\Lombiq.MSBuild.OrchardCore.Base.Sdk\Sdk\*.*"
+              Link="Lombiq.MSBuild.OrchardCore.Base.Sdk\*.*"
+              Pack="true"
+              PackagePath="Lombiq.MSBuild.OrchardCore.Base.Sdk\"
+              Visible="false"/>
+      </ItemGroup>
     </Otherwise>
   </Choose>
 
