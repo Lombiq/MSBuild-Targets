@@ -15,7 +15,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\test\Lombiq.Tests\Lombiq.Tests.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.Cli\Lombiq.HelpfulLibraries.Cli.csproj" />
     <ProjectReference Include="..\Lombiq.MSBuild.Targets.Samples\Lombiq.MSBuild.Targets.Samples.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>SdkSamplePath</_Parameter1>
+      <_Parameter2>$(MSBuildThisFileDirectory)../Lombiq.MSBuild.Sdk.NuGet.Samples</_Parameter2>
+    </AssemblyAttribute>
   </ItemGroup>
 
 </Project>
