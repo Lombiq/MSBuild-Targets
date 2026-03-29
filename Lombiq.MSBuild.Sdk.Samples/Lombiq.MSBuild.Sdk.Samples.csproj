@@ -1,0 +1,4 @@
+﻿<Project>
+  <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.props" />
+  <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.targets" />
+</Project>
