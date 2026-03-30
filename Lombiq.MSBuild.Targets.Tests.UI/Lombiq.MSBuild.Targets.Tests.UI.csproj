@@ -1,0 +1,13 @@
+﻿<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  
+  <Import Project="../Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Sdk/Import.props" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lombiq.MSBuild.Sdk.Samples\Lombiq.MSBuild.Sdk.Samples.csproj" />
+  </ItemGroup>
+
+  <Import Project="../Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Sdk/Import.targets" />
+</Project>

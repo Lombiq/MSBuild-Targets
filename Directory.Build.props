@@ -4,7 +4,7 @@
   </PropertyGroup>
   
   <Choose>
-    <When Condition="$(MSBuildProjectName.EndsWith('.Tests')) OR $(MSBuildProjectName.EndsWith('.Samples'))">
+    <When Condition="$(MSBuildProjectName.EndsWith('.Tests')) OR $(MSBuildProjectName.EndsWith('.Tests.UI')) OR $(MSBuildProjectName.EndsWith('.Samples'))">
       <!-- Adda anything specific to non-publishable projects here. -->
     </When>
 
