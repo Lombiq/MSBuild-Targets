@@ -1,9 +1,11 @@
 ﻿<Project>
   <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.props" />
-  <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.targets" />
+
   <ItemGroup>
     <EmbeddedResource Update="wwwroot\Theme.png">
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </EmbeddedResource>
   </ItemGroup>
+ 
+  <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.targets" />
 </Project>
