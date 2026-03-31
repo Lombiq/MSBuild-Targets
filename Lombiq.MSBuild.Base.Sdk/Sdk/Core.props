@@ -1,4 +1,8 @@
 <Project>
+  <PropertyGroup>
+    <IsLombiqProject Condition="$(MSBuildProjectName.StartsWith('Lombiq.'))">true</IsLombiqProject>
+  </PropertyGroup>
+  
   <ItemGroup>
     <None Include="Readme.md" Condition="Exists('Readme.md')" />
     <None Include="..\Readme.md" Condition="!Exists('Readme.md') AND Exists('..\Readme.md')" />
