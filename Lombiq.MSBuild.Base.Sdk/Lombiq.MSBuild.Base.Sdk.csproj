@@ -3,8 +3,8 @@
   <PropertyGroup>
     <Title>Lombiq MSBuild SDK - Base</Title>
     <Description>Base SDK for other Lombiq MSBuild SDKs. Don't use this directly.</Description>
-    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.OrchardCore.Base.Sdk/Readme.md</PackageProjectUrl>
-    <RootNamespace>Lombiq.MSBuild.OrchardCore.Base.Sdk</RootNamespace>
+    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.Base.Sdk/Readme.md</PackageProjectUrl>
+    <RootNamespace>Lombiq.MSBuild.Base.Sdk</RootNamespace>
   </PropertyGroup>
 
 </Project>
