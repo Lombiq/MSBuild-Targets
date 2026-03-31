@@ -7,6 +7,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\Lombiq.MSBuild.Base.Sdk\Sdk\Core.props">
+      <Link>Lombiq.MSBuild.OrchardCore.Base.Sdk\Core.props</Link>
+      <Pack>true</Pack>
+      <PackagePath>Lombiq.MSBuild.OrchardCore.Base.Sdk/</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\Lombiq.MSBuild.Base.Sdk\Sdk\Core.targets">
+      <Link>Lombiq.MSBuild.OrchardCore.Base.Sdk\Core.targets</Link>
+      <Pack>true</Pack>
+      <PackagePath>Lombiq.MSBuild.OrchardCore.Base.Sdk/</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\Lombiq.MSBuild.Base.Sdk\Sdk\Import.props">
+      <Link>Lombiq.MSBuild.OrchardCore.Base.Sdk\Import.props</Link>
+      <Pack>true</Pack>
+      <PackagePath>Lombiq.MSBuild.OrchardCore.Base.Sdk/</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\Lombiq.MSBuild.Base.Sdk\Sdk\Import.targets">
+      <Link>Lombiq.MSBuild.OrchardCore.Base.Sdk\Import.targets</Link>
+      <Pack>true</Pack>
+      <PackagePath>Lombiq.MSBuild.OrchardCore.Base.Sdk/</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\Lombiq.MSBuild.Base.Sdk\Sdk\Sdk.props">
+      <Link>Lombiq.MSBuild.OrchardCore.Base.Sdk\Sdk.props</Link>
+      <Pack>true</Pack>
+      <PackagePath>Lombiq.MSBuild.OrchardCore.Base.Sdk/</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\Lombiq.MSBuild.Base.Sdk\Sdk\Sdk.targets">
+      <Link>Lombiq.MSBuild.OrchardCore.Base.Sdk\Sdk.targets</Link>
+      <Pack>true</Pack>
+      <PackagePath>Lombiq.MSBuild.OrchardCore.Base.Sdk/</PackagePath>
+      <Visible>false</Visible>
+    </None>
     <None Include="..\Lombiq.MSBuild.OrchardCore.Module.Sdk\Sdk\*.*"
           Link="Lombiq.MSBuild.OrchardCore.Module.Sdk\*.*"
           Pack="true"
