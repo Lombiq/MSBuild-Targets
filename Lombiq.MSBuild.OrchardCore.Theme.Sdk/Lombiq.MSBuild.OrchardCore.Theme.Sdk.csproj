@@ -6,4 +6,12 @@
     <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.OrchardCore.Theme.Sdk/Readme.md</PackageProjectUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\Lombiq.MSBuild.OrchardCore.Module.Sdk\Sdk\*.*"
+          Link="Lombiq.MSBuild.OrchardCore.Module.Sdk\*.*"
+          Pack="true"
+          PackagePath="Lombiq.MSBuild.OrchardCore.Module.Sdk\"
+          Visible="false"/>
+  </ItemGroup>
+
 </Project>
