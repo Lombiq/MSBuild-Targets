@@ -10,11 +10,22 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ## Documentation
 
-To learn about the `Lombiq.MSBuild.*.Targets` packages maintained in this repository, check out their individual Readmes:
+To learn about the packages maintained in this repository, check out their individual Readmes:
 
-- [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Targets for [Microsoft Library Manager](https://github.com/aspnet/LibraryManager) integration.
+- Targets (`Lombiq.MSBuild.*.Targets`):
+  - [LibMan](Lombiq.MSBuild.LibMan.Targets/Readme.md): Targets for [Microsoft Library Manager](https://github.com/aspnet/LibraryManager) integration.
+- MSBuild SDKs (`Lombiq.MSBuild.*.Sdk`):
+  - [Base](Lombiq.MSBuild.Base.Sdk/Readme.md): The root SDK that configures some common features across all other SDKs. This is imported by our other SDKs, it's unlikely that you'd want to use it directly.
+  - [OrchardCore.Module](Lombiq.MSBuild.OrchardCore.Module.Sdk/Readme.md): An SDK for Orchard Core modules.
+  - [OrchardCore.Tests](Lombiq.MSBuild.OrchardCore.Tests.Sdk/Readme.md): An SDK for unit test projects using `Lombiq.Tests`.
+  - [OrchardCore.Tests.UI](Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Readme.md): An SDK for UI test projects using `Lombiq.Tests.UI`.
+  - [OrchardCore.Theme](Lombiq.MSBuild.OrchardCore.Theme.Sdk/Readme.md): An SDK for Orchard Core themes.
 
-Check out the [`Lombiq.MSBuild.Targets.Samples` project](Lombiq.MSBuild.Targets.Samples/Readme.md) for examples.
+> [!NOTE]
+> Read about how to use and configure our MSBuild SDKs [here](Docs/UsingMSBuildSdks.md).
+
+> [!TIP]
+> Check out the [`Lombiq.MSBuild.Targets.Samples` project](Lombiq.MSBuild.Targets.Samples/Readme.md) for examples.
 
 ## Contributing and support
 
