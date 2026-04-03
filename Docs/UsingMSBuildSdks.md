@@ -3,7 +3,7 @@
 > [!NOTE]
 > The following document uses [Lombiq.MSBuild.OrchardCore.Module.Sdk](../Lombiq.MSBuild.OrchardCore.Module.Sdk/Readme.md) as an example, but you can achieve the same with all of the `Lombiq.MSBuild.OrchardCore.*.Sdk` projects.
 
-It can be used by updating your project XML's root `Sdk` attribute to contain the Nuget package name and version, like this:
+It can be used by updating your project XML's root `Sdk` attribute to contain the NuGet package name and version, like this:
 
 ```xml
 <Project Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk/1.0.0">
@@ -14,7 +14,7 @@ It can be used by updating your project XML's root `Sdk` attribute to contain th
 </Project>
 ```
 
-Or by removing the `Sdk` attribute and importing the .props and .targets files directly form the NuGet package. In this case the `Sdk` attribute of the import indicates where to look for the file in the Nuget package cache.
+Or by removing the `Sdk` attribute and importing the .props and .targets files directly form the NuGet package. In this case the `Sdk` attribute of the import indicates where to look for the file in the NuGet package cache.
 
 ```xml
 <Project>
@@ -28,7 +28,7 @@ Or by removing the `Sdk` attribute and importing the .props and .targets files d
 </Project>
 ```
 
-If you want to use a local copy rather than Nuget, you can import these files by giving a full path, like with any other Targets project:
+If you want to use a local copy rather than NuGet, you can import these files by giving a full path, like with any other Targets project:
 
 ```xml
 <Project>
