@@ -1,7 +1,6 @@
 <Project>
   <PropertyGroup>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
     <UseLibMan Condition="'$(UseLibMan)' == '' AND Exists('libman.json')">true</UseLibMan>
   </PropertyGroup>
 
