@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <IsLombiqProject Condition="$(MSBuildProjectName.StartsWith('Lombiq.'))">true</IsLombiqProject>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
   </PropertyGroup>
   
   <ItemGroup>
