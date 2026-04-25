@@ -4,9 +4,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
-    <PackageReference Include="xunit.v3" Version="3.2.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+    <PackageReference Include="Microsoft.NET.Test.Sdk">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">18.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="xunit.v3">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="xunit.runner.visualstudio">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.1.5</Version>
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -17,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.Tests" Version="5.0.1-alpha.1.osoe-925" />
+    <PackageReference Include="Lombiq.Tests">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">5.0.1-alpha.1.osoe-925</Version>
+    </PackageReference>
   </ItemGroup>
   
   <ItemGroup>

@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Module.Targets" Version="3.0.0-preview-18988" />
+    <PackageReference Include="OrchardCore.Module.Targets">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.0.0-preview-18988</Version>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,8 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(FromNuGet)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.6.1-alpha.7.osoe-925" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">12.6.1-alpha.7.osoe-925</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>
