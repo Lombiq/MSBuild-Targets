@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="OrchardCore.Module.Targets">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.0.0-preview-18988</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.0.0-preview-18991</Version>
     </PackageReference>
   </ItemGroup>
 
