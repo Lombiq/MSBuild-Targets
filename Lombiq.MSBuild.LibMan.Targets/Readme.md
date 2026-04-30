@@ -46,8 +46,8 @@ For example:
     <ItemGroup>
         <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="<latest version>" />
         <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="<latest version>" />
-        <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.6.1-alpha.7.osoe-925" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
-        <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.6.1-alpha.7.osoe-925" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+        <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
+        <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="<latest version>" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 </Project>
 ```

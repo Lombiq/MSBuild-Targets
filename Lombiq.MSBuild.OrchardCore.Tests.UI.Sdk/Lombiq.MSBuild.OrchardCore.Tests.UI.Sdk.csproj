@@ -1,9 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <Title>Lombiq MSBuild SDK - UI Testing</Title>
-    <Description>MSBuild SDK for UI testing using Lombiq.Tests.UI library.</Description>
-    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Readme.md</PackageProjectUrl>
-  </PropertyGroup>
-
-</Project>

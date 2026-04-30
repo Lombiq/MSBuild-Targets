@@ -1,9 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <Title>Lombiq MSBuild SDK - Orchard Core Module</Title>
-    <Description>MSBuild SDK for Orchard Core modules.</Description>
-    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.OrchardCore.Module.Sdk/Readme.md</PackageProjectUrl>
-  </PropertyGroup>
-
-</Project>
