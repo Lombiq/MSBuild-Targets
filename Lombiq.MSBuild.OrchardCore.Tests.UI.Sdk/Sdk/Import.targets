@@ -1,0 +1,4 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.Base.Sdk/Sdk/Import.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)Core.targets" />
+</Project>

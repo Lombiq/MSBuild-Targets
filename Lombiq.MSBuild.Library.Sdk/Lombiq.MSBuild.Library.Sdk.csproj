@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>Lombiq MSBuild SDK - Library</Title>
+    <Description>MSBuild SDK for libraries.</Description>
+    <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.Library.Sdk/Readme.md</PackageProjectUrl>
+  </PropertyGroup>
+
+</Project>

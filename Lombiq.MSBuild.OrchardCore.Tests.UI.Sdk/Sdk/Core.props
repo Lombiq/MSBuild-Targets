@@ -1,0 +1,11 @@
+<Project>
+  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(LombiqSolutionRootPath)\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI\Lombiq.Tests.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Tests.UI">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">14.2.2-alpha.14.osoe-925</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>
