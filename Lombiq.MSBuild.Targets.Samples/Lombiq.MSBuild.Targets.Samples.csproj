@@ -5,6 +5,10 @@
   <Import Project="..\Lombiq.MSBuild.LibMan.Targets\Lombiq.MSBuild.LibMan.Targets.props"
           Condition="'$(NuGetBuild)' != 'true'"/>
 
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
   <!-- You have to explicitly include other NuGet packages. For Lombiq.MSBuild.LibMan.Targets, this means only
        Microsoft.Web.LibraryManager.Build if you import it directly. -->
   <ItemGroup>
@@ -14,9 +18,9 @@
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
     <!-- When referencing Lombiq.MSBuild.LibMan.Targets as a NuGet package, you have to explicitly include the
          Helpful Libraries packages too, if you want to use source generation. -->
-    <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="1.0.1-alpha.10.osoe-1208" />
-    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.6.1-alpha.7.osoe-925" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
-    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.6.1-alpha.7.osoe-925" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <PackageReference Include="Lombiq.MSBuild.LibMan.Targets" Version="1.0.0-alpha.12.nest-643" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" Version="12.5.0" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 
   <ItemGroup>
