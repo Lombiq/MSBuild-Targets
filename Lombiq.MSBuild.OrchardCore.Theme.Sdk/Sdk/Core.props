@@ -1,7 +1,7 @@
 <Project>
   <ItemGroup>
     <PackageReference Include="OrchardCore.Theme.Targets">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.0.0-preview-19009</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(OrchardCoreVersion)</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
