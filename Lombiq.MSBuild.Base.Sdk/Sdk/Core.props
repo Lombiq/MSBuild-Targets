@@ -2,7 +2,7 @@
   <PropertyGroup>
     <IsLombiqProject Condition="$(MSBuildProjectName.StartsWith('Lombiq.'))">true</IsLombiqProject>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
-    <OrchardCoreVersion Condition="'$(OrchardCoreVersion)' == '' AND '$(ManagePackageVersionsCentrally)' != 'true'">3.0.0-preview-19050</OrchardCoreVersion>
+    <OrchardCoreVersion Condition="'$(OrchardCoreVersion)' == '' AND '$(ManagePackageVersionsCentrally)' != 'true'">3.0.0</OrchardCoreVersion>
   </PropertyGroup>
 
   <!-- Temporarily disabled "NU1903: Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity
