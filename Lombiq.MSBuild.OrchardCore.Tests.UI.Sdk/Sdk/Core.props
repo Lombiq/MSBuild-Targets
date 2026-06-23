@@ -1,4 +1,8 @@
 <Project>
+  <PropertyGroup>
+    <LombiqSdkName>OrchardCore.Tests.UI</LombiqSdkName>
+  </PropertyGroup>
+  
   <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
     <ProjectReference Include="$(LombiqSolutionRootPath)\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI\Lombiq.Tests.UI.csproj" />
   </ItemGroup>

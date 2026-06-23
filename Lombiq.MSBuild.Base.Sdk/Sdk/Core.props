@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <IsLombiqProject Condition="$(MSBuildProjectName.StartsWith('Lombiq.'))">true</IsLombiqProject>
+    <LombiqSdkName>Base</LombiqSdkName>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
     <OrchardCoreVersion Condition="'$(OrchardCoreVersion)' == '' AND '$(ManagePackageVersionsCentrally)' != 'true'">3.0.0</OrchardCoreVersion>
   </PropertyGroup>

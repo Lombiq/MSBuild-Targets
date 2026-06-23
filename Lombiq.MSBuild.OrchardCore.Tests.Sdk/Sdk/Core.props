@@ -1,5 +1,6 @@
 <Project>
   <PropertyGroup>
+    <LombiqSdkName>OrchardCore.Tests</LombiqSdkName>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 

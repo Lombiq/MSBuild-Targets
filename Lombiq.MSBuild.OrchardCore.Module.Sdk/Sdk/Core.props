@@ -1,5 +1,6 @@
 <Project>
   <PropertyGroup>
+    <LombiqSdkName>OrchardCore.Module</LombiqSdkName>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <UseLibMan Condition="'$(UseLibMan)' == '' AND Exists('libman.json')">true</UseLibMan>
   </PropertyGroup>
