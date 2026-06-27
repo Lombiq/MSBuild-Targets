@@ -9,7 +9,7 @@
 
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
     <PackageReference Include="Lombiq.Tests.UI">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">14.2.2-alpha.16.osoe-925</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">14.2.2-alpha.17.osoe-925</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
