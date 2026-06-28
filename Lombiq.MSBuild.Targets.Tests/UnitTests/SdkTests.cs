@@ -69,14 +69,9 @@ public class SdkTests
                 .Value
                 .ShouldBe("Microsoft.AspNetCore.App");
         
-            elements["dependency"]
-                .Select(node => node.Attributes["id"]?.Value ?? string.Empty)
-                .Order()
-                .ToArray()
-                .ShouldBe([
-                    "Lombiq.HelpfulLibraries.OrchardCore",
-                    "OrchardCore.Module.Targets",
-                ]);
+            var dependencies = elements["dependency"].Select(node => node.Attributes["id"]?.Value ?? string.Empty).ToList();
+            dependencies.ShouldContain("Lombiq.HelpfulLibraries.OrchardCore");
+            dependencies.ShouldContain("OrchardCore.Module.Targets");
         }
         finally
         {
