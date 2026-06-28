@@ -1,4 +1,4 @@
-﻿<Project Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk/1.0.1-alpha.21.osoe-1208">
+﻿<Project Sdk="Lombiq.MSBuild.OrchardCore.Module.Sdk/1.0.1-alpha.21.osoe-925">
 
   <PropertyGroup>
     <IsLombiqProject>true</IsLombiqProject>
