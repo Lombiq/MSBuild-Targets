@@ -4,7 +4,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.LibraryManager.Build">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.0.71</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.0.114</Version>
     </PackageReference>
   </ItemGroup>
 

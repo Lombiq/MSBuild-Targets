@@ -26,7 +26,7 @@ For example:
     <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.props" />
     
     <ItemGroup>
-        <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+        <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.114" />
     </ItemGroup>
 
     <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.LibMan.Targets/Lombiq.MSBuild.LibMan.Targets.targets" />

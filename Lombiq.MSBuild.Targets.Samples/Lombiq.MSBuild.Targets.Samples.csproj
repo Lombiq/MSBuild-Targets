@@ -8,7 +8,7 @@
   <!-- You have to explicitly include other NuGet packages. For Lombiq.MSBuild.LibMan.Targets, this means only
        Microsoft.Web.LibraryManager.Build if you import it directly. -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.114" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
