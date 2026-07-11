@@ -1,7 +1,7 @@
 ﻿<Project>
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <OrchardCoreVersion>4.0.0-preview-19065</OrchardCoreVersion>
+    <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
   </PropertyGroup>
 
   <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.props" />
