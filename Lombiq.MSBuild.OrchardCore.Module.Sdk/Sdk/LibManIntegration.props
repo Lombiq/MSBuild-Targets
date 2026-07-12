@@ -13,10 +13,10 @@
       <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">1.0.1-alpha.15.osoe-1208</Version>
     </PackageReference>
     <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" OutputItemType="Analyzer" ReferenceOutputAssembly="true">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">12.6.1-alpha.9.osoe-925</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">12.6.1-alpha.10.osoe-925</Version>
     </PackageReference>
     <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">12.6.1-alpha.9.osoe-925</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">12.6.1-alpha.10.osoe-925</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
