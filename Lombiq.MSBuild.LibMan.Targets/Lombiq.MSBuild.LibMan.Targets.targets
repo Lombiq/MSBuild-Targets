@@ -7,15 +7,15 @@
              Projects="$(MSBuildThisFileDirectory)..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
   </Target>
 
-  <!-- Needed for Azure deployment -->
+  <!-- Needed for Azure deployment and for transitive dependencies (e.g. in unit test projects). -->
 
   <Target Name="AddVendors" AfterTargets="LibraryManagerRestore">
     <ItemGroup>
-      <Content Include="wwwroot\vendors\**">
+      <Content Include="$(LombiqMSBuildLibManTarget)\**">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
-      <EmbeddedResource Include="wwwroot\vendors\**" />
+      <EmbeddedResource Include="$(LombiqMSBuildLibManTarget)\**" />
     </ItemGroup>
   </Target>
 
