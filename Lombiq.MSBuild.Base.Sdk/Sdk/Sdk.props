@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <FromNuGet>true</FromNuGet>
+    <LombiqMSBuildLibManTargetsPath>$(MSBuildThisFileDirectory)../Lombiq.MSBuild.LibMan.Targets</LombiqMSBuildLibManTargetsPath>
   </PropertyGroup>
   
   <Import Project="$(MSBuildThisFileDirectory)Core.props" />

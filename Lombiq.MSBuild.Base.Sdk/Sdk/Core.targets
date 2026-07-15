@@ -13,4 +13,6 @@
   <PropertyGroup Condition="'$(IsLombiqProject)' == 'true' AND '$(PackageLicenseExpression)' == ''">
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)LibManIntegration.targets" Condition="'$(UseLibMan)' == 'true'" />
 </Project>

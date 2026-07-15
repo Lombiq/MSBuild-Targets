@@ -13,6 +13,7 @@
       >$([MSBuild]::MakeRelative('$(MSBuildProjectDirectory)', '$(LombiqSolutionRootPath)/src/Libraries/Lombiq.HelpfulLibraries'))</LombiqHelpfulLibrariesPath>
     <LombiqAnalyzersPath Condition="'$(LombiqAnalyzersPath)' == '' AND '$(LombiqSolutionRootPath)' != ''"
       >$([MSBuild]::MakeRelative('$(MSBuildProjectDirectory)', '$(LombiqSolutionRootPath)/tools/Lombiq.Analyzers'))</LombiqAnalyzersPath>
+    <LombiqMSBuildLibManTargetsPath>$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.LibMan.Targets</LombiqMSBuildLibManTargetsPath>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)Core.props" />

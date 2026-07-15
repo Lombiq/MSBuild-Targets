@@ -2,10 +2,7 @@
   <PropertyGroup>
     <LombiqSdkName>OrchardCore.Module</LombiqSdkName>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <UseLibMan Condition="'$(UseLibMan)' == '' AND Exists('libman.json')">true</UseLibMan>
   </PropertyGroup>
-
-  <Import Project="$(MSBuildThisFileDirectory)LibManIntegration.props" Condition="'$(UseLibMan)' == 'true'" />
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

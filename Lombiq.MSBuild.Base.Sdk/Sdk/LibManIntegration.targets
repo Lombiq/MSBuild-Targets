@@ -1,0 +1,3 @@
+<Project>
+  <Import Project="$(LombiqMSBuildLibManTargetsPath)/Lombiq.MSBuild.LibMan.Targets.targets" />
+</Project>

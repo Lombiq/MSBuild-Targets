@@ -26,6 +26,14 @@
         <None Include="build\**" Pack="true" PackagePath="build\" Condition="Exists('build')" />
       </ItemGroup>
 
+      <ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Sdk'))">
+        <None Include="..\Lombiq.MSBuild.LibMan.Targets\*.*"
+              Link="Lombiq.MSBuild.LibMan.Targets\*.*"
+              Pack="true"
+              PackagePath="Lombiq.MSBuild.LibMan.Targets\"
+              Visible="false"/>
+      </ItemGroup>
+
       <ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Sdk')) AND MSBuildProjectName != 'Lombiq.MSBuild.Base.Sdk'">
         <None Include="..\Lombiq.MSBuild.Base.Sdk\Sdk\*.*"
               Link="Lombiq.MSBuild.Base.Sdk\*.*"

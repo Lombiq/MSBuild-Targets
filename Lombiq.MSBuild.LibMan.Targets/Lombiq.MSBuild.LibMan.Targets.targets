@@ -4,7 +4,7 @@
 
   <Target Name="CustomBeforeCompile" BeforeTargets="Compile" Condition="'$(FromNuGet)' != 'true'">
     <MSBuild Condition="!Exists('$(SourceGeneratorLocation)')"
-             Projects="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
+             Projects="$(MSBuildThisFileDirectory)..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
   </Target>
 
   <!-- Needed for Azure deployment -->

@@ -1,3 +1,2 @@
 <Project>
-  <Import Project="$(MSBuildThisFileDirectory)LibManIntegration.targets" Condition="'$(UseLibMan)' == 'true'" />
 </Project>
