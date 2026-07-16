@@ -9,10 +9,10 @@
 
   <ItemGroup Condition="'$(FromNuGet)' == 'true'">
     <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" OutputItemType="Analyzer" ReferenceOutputAssembly="true">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">12.6.1-alpha.10.osoe-925</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqHelpfulLibraries)</Version>
     </PackageReference>
     <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">12.6.1-alpha.10.osoe-925</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqHelpfulLibraries)</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
