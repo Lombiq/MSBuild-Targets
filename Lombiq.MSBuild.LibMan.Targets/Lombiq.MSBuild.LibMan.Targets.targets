@@ -34,8 +34,8 @@
 
     <!-- Collect all competing package props file, then remove them from the list to prevent a NuGet warning. -->
     <ItemGroup>
-      <PackageProps Include="@(_PackageFiles)" Condition="'%(_PackageFiles.PackagePath)' == 'build\$(_PackageFiles.ProjectName).props'" />
-      <_PackageFiles Remove="@(_PackageFiles)" Condition="'%(_PackageFiles.PackagePath)' == 'build\$(_PackageFiles.ProjectName).props'" />
+      <PackageProps Include="@(_PackageFiles)" Condition="'%(_PackageFiles.PackagePath)' == 'build\$(ProjectName).props'" />
+      <_PackageFiles Remove="@(_PackageFiles)" Condition="'%(_PackageFiles.PackagePath)' == 'build\$(ProjectName).props'" />
     </ItemGroup>
 
     <!-- Concatenate each competing props file into a single mega XML that's still valid, then get the contents inside
