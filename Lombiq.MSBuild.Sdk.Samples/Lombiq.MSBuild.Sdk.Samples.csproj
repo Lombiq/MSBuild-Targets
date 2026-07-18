@@ -1,0 +1,16 @@
+﻿<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
+  </PropertyGroup>
+
+  <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.props" />
+
+  <ItemGroup>
+    <EmbeddedResource Update="wwwroot\Theme.png">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+ 
+  <Import Project="../Lombiq.MSBuild.OrchardCore.Theme.Sdk/Sdk/Import.targets" />
+</Project>

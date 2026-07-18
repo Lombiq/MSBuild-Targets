@@ -1,0 +1,39 @@
+<Project>
+  <PropertyGroup>
+    <LombiqSdkName>OrchardCore.Tests</LombiqSdkName>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">18.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="xunit.v3">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="xunit.runner.visualstudio">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.1.5</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="$(LombiqSolutionRootPath)\test\Lombiq.Tests\Lombiq.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.Tests">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(5.0.1-alpha.1.osoe-925)</Version>
+    </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="Recipes\*.recipe.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+<Project>
+  <PropertyGroup>
+    <IsLombiqProject Condition="$(MSBuildProjectName.StartsWith('Lombiq.'))">true</IsLombiqProject>
+    <LombiqSdkName>Base</LombiqSdkName>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
+    <OrchardCoreVersion Condition="'$(OrchardCoreVersion)' == '' AND '$(ManagePackageVersionsCentrally)' != 'true'">3.0.1</OrchardCoreVersion>
+    <UseLibMan Condition="'$(UseLibMan)' == '' AND Exists('libman.json')">true</UseLibMan>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <PackageVersionLombiqHelpfulLibraries Condition="'$(PackageVersionLombiqHelpfulLibraries)' == ''"
+      >13.0.0</PackageVersionLombiqHelpfulLibraries>
+    <PackageVersionLombiqTests Condition="'$(PackageVersionLombiqTests)' == ''"
+      >6.0.0</PackageVersionLombiqTests>
+    <PackageVersionLombiqTestsUI Condition="'$(PackageVersionLombiqTestsUI)' == ''"
+      >15.0.0</PackageVersionLombiqTestsUI>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)LibManIntegration.props" Condition="'$(UseLibMan)' == 'true'" />
+  
+  <ItemGroup>
+    <None Include="Readme.md" Condition="Exists('Readme.md')" />
+    <None Include="..\Readme.md" Condition="!Exists('Readme.md') AND Exists('..\Readme.md')" />
+    <None Include="NuGetIcon.png" Pack="true" PackagePath="" Condition="Exists('NuGetIcon.png')" />
+  </ItemGroup>
+</Project>

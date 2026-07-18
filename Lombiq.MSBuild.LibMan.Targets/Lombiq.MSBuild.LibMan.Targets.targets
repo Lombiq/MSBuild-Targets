@@ -4,18 +4,18 @@
 
   <Target Name="CustomBeforeCompile" BeforeTargets="Compile" Condition="'$(FromNuGet)' != 'true'">
     <MSBuild Condition="!Exists('$(SourceGeneratorLocation)')"
-             Projects="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
+             Projects="$(MSBuildThisFileDirectory)..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.SourceGenerators\Lombiq.HelpfulLibraries.SourceGenerators.csproj" />
   </Target>
 
-  <!-- Needed for Azure deployment -->
+  <!-- Needed for Azure deployment and for transitive dependencies (e.g. in unit test projects). -->
 
   <Target Name="AddVendors" AfterTargets="LibraryManagerRestore">
     <ItemGroup>
-      <Content Include="wwwroot\vendors\**">
+      <Content Include="$(LombiqMSBuildLibManTarget)\**">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </Content>
-      <EmbeddedResource Include="wwwroot\vendors\**" />
+      <EmbeddedResource Include="$(LombiqMSBuildLibManTarget)\**" />
     </ItemGroup>
   </Target>
 
@@ -34,13 +34,13 @@
 
     <!-- Collect all competing package props file, then remove them from the list to prevent a NuGet warning. -->
     <ItemGroup>
-      <PackageProps Include="@(_PackageFiles)" Condition="'%(PackagePath)' == 'build\$(ProjectName).props'" />
-      <_PackageFiles Remove="@(_PackageFiles)" Condition="'%(PackagePath)' == 'build\$(ProjectName).props'" />
+      <PackageProps Include="@(_PackageFiles)" Condition="'%(_PackageFiles.PackagePath)' == 'build\$(ProjectName).props'" />
+      <_PackageFiles Remove="@(_PackageFiles)" Condition="'%(_PackageFiles.PackagePath)' == 'build\$(ProjectName).props'" />
     </ItemGroup>
 
     <!-- Concatenate each competing props file into a single mega XML that's still valid, then get the contents inside
          the root elements. -->
-    <ReadLinesFromFile File="%(PackageProps.Identity)">
+    <ReadLinesFromFile File="%(PackageProps.Identity)" Condition="%(PackageProps.Identity) != ''">
       <Output TaskParameter="Lines" ItemName="PackagePropsFileContents" />
     </ReadLinesFromFile>
 

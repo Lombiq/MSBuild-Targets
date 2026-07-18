@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <LombiqSdkName>OrchardCore.Theme</LombiqSdkName>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.Theme.Targets">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(OrchardCoreVersion)</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>

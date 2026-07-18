@@ -1,0 +1,20 @@
+<Project>
+  <!-- You can't set the target framework inside a NuGet package because that information is used to find it in the
+       first place, so setting TargetFramework only makes sense when this SDK is imported from submodule. -->
+  <PropertyGroup>
+    <TargetFramework Condition="'$(TargetFramework)' == ''">net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Base paths used to normalize ProjectReference paths. Relative paths are used to make them shorter. -->
+  <PropertyGroup>
+    <LombiqSolutionRootPath Condition="'$(LombiqSolutionRootPath)' == ''"
+      >$([MSBuild]::MakeRelative('$(MSBuildProjectDirectory)', '$(MSBuildThisFileDirectory)../../../../..'))</LombiqSolutionRootPath>
+    <LombiqHelpfulLibrariesPath Condition="'$(LombiqHelpfulLibrariesPath)' == '' AND '$(LombiqSolutionRootPath)' != ''"
+      >$([MSBuild]::MakeRelative('$(MSBuildProjectDirectory)', '$(LombiqSolutionRootPath)/src/Libraries/Lombiq.HelpfulLibraries'))</LombiqHelpfulLibrariesPath>
+    <LombiqAnalyzersPath Condition="'$(LombiqAnalyzersPath)' == '' AND '$(LombiqSolutionRootPath)' != ''"
+      >$([MSBuild]::MakeRelative('$(MSBuildProjectDirectory)', '$(LombiqSolutionRootPath)/tools/Lombiq.Analyzers'))</LombiqAnalyzersPath>
+    <LombiqMSBuildLibManTargetsPath>$(MSBuildThisFileDirectory)../../Lombiq.MSBuild.LibMan.Targets</LombiqMSBuildLibManTargetsPath>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)Core.props" />
+</Project>

@@ -1,0 +1,18 @@
+<Project>
+  <Import Project="$(LombiqMSBuildLibManTargetsPath)/Lombiq.MSBuild.LibMan.Targets.props" />
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">3.0.114</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(FromNuGet)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.Attributes" OutputItemType="Analyzer" ReferenceOutputAssembly="true">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqHelpfulLibraries)</Version>
+    </PackageReference>
+    <PackageReference Include="Lombiq.HelpfulLibraries.SourceGenerators" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqHelpfulLibraries)</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>

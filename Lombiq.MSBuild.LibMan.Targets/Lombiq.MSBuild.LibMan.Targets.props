@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <FromNuGet Condition="'$(FromNuGet)' == ''">$(NuGetBuild)</FromNuGet>
+    <LombiqMSBuildLibManTarget Condition="'$(LombiqMSBuildLibManTarget)' == ''">wwwroot\vendors</LombiqMSBuildLibManTarget>
   </PropertyGroup>
 
   <!-- Configuration -->
