@@ -65,4 +65,4 @@ All of our MSBuild SDK projects share these features and configurations:
 
 ## LibMan Integration
 
-If the project importing this SDK has a _libman.json_ file in the project root, then the [Lombiq.MSBuild.LibMan.Targets](../Lombiq.MSBuild.LibMan.Targets/Readme.md) is automatically imported and all of its features can be used.
+If the project importing this SDK has a _libman.json_ file in the project root, then the [Lombiq.MSBuild.LibMan.Targets](../Lombiq.MSBuild.LibMan.Targets/Readme.md) is automatically imported and all of its features can be used. To disable this feature, also include a _.disable-libman_ file in the project root. It can be empty, only file existence is checked.

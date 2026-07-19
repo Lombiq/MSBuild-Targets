@@ -6,4 +6,10 @@
     <PackageProjectUrl>https://github.com/Lombiq/MSBuild-Targets/blob/dev/Lombiq.MSBuild.Base.Sdk/Readme.md</PackageProjectUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="..\Docs\*.*">
+      <Link>Docs\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -4,7 +4,7 @@
     <LombiqSdkName>Base</LombiqSdkName>
     <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
     <OrchardCoreVersion Condition="'$(OrchardCoreVersion)' == '' AND '$(ManagePackageVersionsCentrally)' != 'true'">3.0.1</OrchardCoreVersion>
-    <UseLibMan Condition="'$(UseLibMan)' == '' AND Exists('libman.json')">true</UseLibMan>
+    <UseLibMan Condition="'$(UseLibMan)' == '' AND Exists('libman.json') AND !Exists('.disable-libman')">true</UseLibMan>
   </PropertyGroup>
   
   <PropertyGroup>
