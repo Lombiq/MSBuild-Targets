@@ -24,7 +24,7 @@
 
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
     <PackageReference Include="Lombiq.Tests">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(5.0.1-alpha.1.osoe-925)</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqTests)</Version>
     </PackageReference>
   </ItemGroup>
   
