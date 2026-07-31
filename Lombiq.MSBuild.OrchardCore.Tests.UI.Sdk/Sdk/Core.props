@@ -3,11 +3,11 @@
     <LombiqSdkName>OrchardCore.Tests.UI</LombiqSdkName>
   </PropertyGroup>
   
-  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+  <ItemGroup Condition="'$(FromNuGet)' != 'true'">
     <ProjectReference Include="$(LombiqSolutionRootPath)\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI\Lombiq.Tests.UI.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+  <ItemGroup Condition="'$(FromNuGet)' == 'true'">
     <PackageReference Include="Lombiq.Tests.UI">
       <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqTestsUI)</Version>
     </PackageReference>
