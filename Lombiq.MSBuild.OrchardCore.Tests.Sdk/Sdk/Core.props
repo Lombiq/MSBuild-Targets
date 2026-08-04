@@ -18,11 +18,11 @@
     </PackageReference>
   </ItemGroup>
   
-  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+  <ItemGroup Condition="'$(FromNuGet)' != 'true'">
     <ProjectReference Include="$(LombiqSolutionRootPath)\test\Lombiq.Tests\Lombiq.Tests.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+  <ItemGroup Condition="'$(FromNuGet)' == 'true'">
     <PackageReference Include="Lombiq.Tests">
       <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqTests)</Version>
     </PackageReference>
