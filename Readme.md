@@ -19,6 +19,7 @@ To learn about the packages maintained in this repository, check out their indiv
   - [OrchardCore.Module](Lombiq.MSBuild.OrchardCore.Module.Sdk/Readme.md): An SDK for Orchard Core modules.
   - [OrchardCore.Tests](Lombiq.MSBuild.OrchardCore.Tests.Sdk/Readme.md): An SDK for unit test projects using `Lombiq.Tests`.
   - [OrchardCore.Tests.UI](Lombiq.MSBuild.OrchardCore.Tests.UI.Sdk/Readme.md): An SDK for UI test projects using `Lombiq.Tests.UI`.
+  - [OrchardCore.Tests.UI.Library](Lombiq.MSBuild.OrchardCore.Tests.UI.Library.Sdk/Readme.md): An SDK for reusable UI test libraries using `Lombiq.Tests.UI`.
   - [OrchardCore.Theme](Lombiq.MSBuild.OrchardCore.Theme.Sdk/Readme.md): An SDK for Orchard Core themes.
 
 > [!NOTE]
