@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <LombiqSdkName>OrchardCore.Tests.UI.Library</LombiqSdkName>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(FromNuGet)' != 'true'">
+    <ProjectReference Include="$(LombiqSolutionRootPath)\test\Lombiq.UITestingToolbox\Lombiq.Tests.UI\Lombiq.Tests.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(FromNuGet)' == 'true'">
+    <PackageReference Include="Lombiq.Tests.UI">
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">$(PackageVersionLombiqTestsUI)</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>
