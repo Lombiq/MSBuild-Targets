@@ -9,7 +9,7 @@
   
   <PropertyGroup>
     <PackageVersionLombiqHelpfulLibraries Condition="'$(PackageVersionLombiqHelpfulLibraries)' == ''"
-      >13.0.1-alpha.3.osoe-1308</PackageVersionLombiqHelpfulLibraries>
+      >13.0.1-alpha.3.osoe-1317</PackageVersionLombiqHelpfulLibraries>
     <PackageVersionLombiqTests Condition="'$(PackageVersionLombiqTests)' == ''"
       >6.0.0</PackageVersionLombiqTests>
     <PackageVersionLombiqTestsUI Condition="'$(PackageVersionLombiqTestsUI)' == ''"
