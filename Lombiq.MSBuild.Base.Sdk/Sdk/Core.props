@@ -9,9 +9,9 @@
   
   <PropertyGroup>
     <PackageVersionLombiqHelpfulLibraries Condition="'$(PackageVersionLombiqHelpfulLibraries)' == ''"
-      >13.0.1-alpha.4.osoe-344</PackageVersionLombiqHelpfulLibraries>
+      >13.0.1-alpha.5.osoe-344</PackageVersionLombiqHelpfulLibraries>
     <PackageVersionLombiqTests Condition="'$(PackageVersionLombiqTests)' == ''"
-      >6.0.1-alpha.0.osoe-344 </PackageVersionLombiqTests>
+      >6.0.1-alpha.0.osoe-344</PackageVersionLombiqTests>
     <PackageVersionLombiqTestsUI Condition="'$(PackageVersionLombiqTestsUI)' == ''"
       >15.0.1-alpha.3.osoe-344</PackageVersionLombiqTestsUI>
   </PropertyGroup>
