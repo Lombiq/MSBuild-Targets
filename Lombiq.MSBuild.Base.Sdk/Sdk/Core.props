@@ -9,11 +9,11 @@
   
   <PropertyGroup>
     <PackageVersionLombiqHelpfulLibraries Condition="'$(PackageVersionLombiqHelpfulLibraries)' == ''"
-      >13.0.1-alpha.6.osoe-344</PackageVersionLombiqHelpfulLibraries>
+      >13.1.0</PackageVersionLombiqHelpfulLibraries>
     <PackageVersionLombiqTests Condition="'$(PackageVersionLombiqTests)' == ''"
-      >6.0.1-alpha.0.osoe-344</PackageVersionLombiqTests>
+      >6.0.1</PackageVersionLombiqTests>
     <PackageVersionLombiqTestsUI Condition="'$(PackageVersionLombiqTestsUI)' == ''"
-      >15.0.1-alpha.3.osoe-344</PackageVersionLombiqTestsUI>
+      >16.0.0</PackageVersionLombiqTestsUI>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)LibManIntegration.props" Condition="'$(UseLibMan)' == 'true'" />
