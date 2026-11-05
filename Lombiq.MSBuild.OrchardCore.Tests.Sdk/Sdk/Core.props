@@ -7,13 +7,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Testing.Extensions.GitHubActionsReport">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">2.5.1</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Testing.Extensions.HangDump">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">2.5.1</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Testing.Extensions.TrxReport">
-      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">2.5.1</Version>
+      <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">2.5.2</Version>
     </PackageReference>
     <PackageReference Include="xunit.v3">
       <Version Condition="'$(ManagePackageVersionsCentrally)' != 'true'">4.0.2</Version>
